@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, FileText, ArrowUpRight, Github, Linkedin, Star } from 'lucide-react';
 import './Hero.css';
+import portraitImg from './Pic_2.png';
 
 const BehanceIcon = (props) => (
   <svg 
@@ -81,7 +82,7 @@ const Hero = () => {
             {/* Organic Peach backdrop (Ref 2) */}
             <div className="hero-blob-card">
               <img 
-                src='./Public/Pic_2.png' 
+                src={portraitImg} 
                 alt="Tushita Kaul portrait" 
                 className="hero-portrait" 
               />
