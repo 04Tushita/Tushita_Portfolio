@@ -81,7 +81,7 @@ const Hero = () => {
             {/* Organic Peach backdrop (Ref 2) */}
             <div className="hero-blob-card">
               <img 
-                src="./Public/Pic_2.png" 
+                src='./Public/Pic_2.png' 
                 alt="Tushita Kaul portrait" 
                 className="hero-portrait" 
               />
