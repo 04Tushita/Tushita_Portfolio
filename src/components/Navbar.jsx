@@ -44,9 +44,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled glass-card' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="logo heading-gradient">
+        <Link to="/" className="logo">
           Tushita Kaul.
         </Link>
 

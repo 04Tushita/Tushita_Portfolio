@@ -1,37 +1,86 @@
+.about {
+  position: relative;
+  background-color: var(--bg-secondary);
+  padding-bottom: 6rem;
+  padding-top: 2rem;
+}
+
 .about-container {
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
 }
 
 .about-image-side {
-  flex: 1;
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Polaroid Container & Cards */
+.about-polaroid-container {
+  position: relative;
+  width: 340px;
+  height: 430px;
+}
+
+.about-img-bg-card {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-tertiary); /* Mustard yellow backdrop */
+  border: 1.8px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  transform: rotate(-4deg);
+  z-index: 1;
 }
 
 .about-img-wrapper {
-  padding: 1rem;
-  border-radius: 1.5rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1.8px solid var(--border-dark);
+  padding: 1.2rem 1.2rem 3.5rem 1.2rem;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px rgba(42, 36, 33, 0.15);
+  transform: rotate(3deg);
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-img-wrapper:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 8px 8px 0px var(--border-dark);
 }
 
 .about-img {
   width: 100%;
-  height: auto;
-  border-radius: 1rem;
+  height: 100%;
   object-fit: cover;
-  filter: grayscale(20%);
-  transition: filter 0.5s ease;
+  border: 1.5px solid var(--border-dark);
+  border-radius: 2px;
 }
 
-.about-img:hover {
-  filter: grayscale(0%);
+.polaroid-caption {
+  font-size: 1.15rem;
+  text-align: center;
+  color: var(--text-main);
+  margin-top: 1rem;
+  font-weight: 500;
 }
 
+/* Narrative content side */
 .about-content-side {
   flex: 1.2;
 }
 
 .about-text {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
   color: var(--text-muted);
 }
@@ -44,30 +93,75 @@
 }
 
 .about-card {
-  padding: 1.5rem;
+  padding: 1.8rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: transform 0.3s ease;
+  align-items: flex-start;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(139, 92, 246, 0.3);
+.about-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-dark);
+  padding: 10px;
 }
 
-.about-card h3 {
-  font-size: 1.2rem;
+.icon-primary {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.icon-secondary {
+  background-color: var(--accent-secondary);
+  color: #ffffff;
+}
+
+.icon-tertiary {
+  background-color: var(--accent-tertiary);
   color: var(--text-main);
 }
 
+.about-card h3 {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
 .about-card p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--text-muted);
+}
+
+/* Deco Star Tweaks */
+.about-star-1 {
+  animation-delay: 2s;
+  font-size: 1.6rem;
+}
+.about-star-2 {
+  animation-delay: 4s;
+  font-size: 1.4rem;
 }
 
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
+    gap: 3.5rem;
+  }
+  .about-image-side {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-polaroid-container {
+    width: 290px;
+    height: 370px;
   }
 }

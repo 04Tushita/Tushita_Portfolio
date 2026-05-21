@@ -1,29 +1,28 @@
 /* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 :root {
-  /* Color Palette (Dark Theme with Purple/Blue Accents) */
-  --bg-main: #0a0a0e;
-  --bg-secondary: #12121a;
-  --text-main: #f8f8f8;
-  --text-muted: #a0a0b0;
+  /* Color Palette (Warm Editorial / Organic Modern) */
+  --bg-main: #FAF6F0;       /* Warm Cream */
+  --bg-secondary: #FFF0EB;  /* Light Peach/Pink */
+  --bg-card: #FFFFFF;       /* Crisp White */
+  --text-main: #2A2421;     /* Dark warm charcoal/brown */
+  --text-muted: #7D726D;    /* Warm medium grey/brown */
   
-  --accent-primary: #8b5cf6; /* Vibrant Purple */
-  --accent-secondary: #3b82f6; /* Blue */
-  --accent-tertiary: #ec4899; /* Pink */
+  --accent-primary: #E76F51;   /* Terracotta/Coral */
+  --accent-secondary: #F4A261; /* Soft Peach */
+  --accent-tertiary: #E9C46A;  /* Warm Mustard Yellow */
   
-  /* Gradients */
-  --gradient-main: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  --gradient-hover: linear-gradient(135deg, #a78bfa, #60a5fa);
-  --gradient-text: linear-gradient(to right, #c4b5fd, #93c5fd);
-
-  /* Glassmorphism Tokens */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  --glass-blur: blur(12px);
-
+  /* Borders and Shadows */
+  --border-color: rgba(42, 36, 33, 0.12);
+  --border-dark: #2A2421;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+  
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 
   /* Spacing */
   --section-padding: 6rem 2rem;
@@ -62,115 +61,143 @@ ul {
 /* Typography Classes */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  line-height: 1.2;
+  color: var(--text-main);
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 .heading-gradient {
-  background: var(--gradient-text);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
 }
 
+.italic-serif {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+}
+
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
   text-align: center;
+  font-family: var(--font-heading);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+  font-weight: 500;
 }
 
 /* Layout Utilities */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
+  width: 100%;
 }
 
 .section {
   padding: var(--section-padding);
+  position: relative;
 }
 
-/* Glassmorphism Utility */
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: 1rem;
-  box-shadow: var(--glass-shadow);
+.bg-cream {
+  background-color: var(--bg-main);
+}
+
+.bg-peach {
+  background-color: var(--bg-secondary);
+}
+
+/* Rounded Cards */
+.organic-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.organic-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px var(--border-dark);
 }
 
 /* Buttons */
 .btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2.2rem;
   border-radius: 2rem;
   font-weight: 600;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1.5px solid var(--border-dark);
   outline: none;
 }
 
 .btn-primary {
-  background: var(--gradient-main);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 3px 3px 0px var(--border-dark);
 }
 
 .btn-primary:hover {
-  background: var(--gradient-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+  background: var(--accent-secondary);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-dark);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--text-main);
-  border: 1px solid var(--glass-border);
+  box-shadow: 3px 3px 0px var(--border-dark);
 }
 
 .btn-secondary:hover {
-  background: var(--glass-bg);
-  border-color: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
+  background: var(--bg-secondary);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-dark);
 }
 
-/* Global App Container */
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Floating Stars decoration (Ref 1) */
+.star-deco {
+  color: var(--accent-tertiary);
+  font-size: 1.5rem;
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  animation: spin-slow 15s linear infinite;
 }
 
-main {
-  flex-grow: 1;
-}
-
-/* Animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 5px;
+  background: var(--text-muted);
+  border: 3px solid var(--bg-main);
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
@@ -179,7 +206,7 @@ main {
 /* Responsive adjust */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .section {
     padding: 4rem 1.5rem;

@@ -5,15 +5,16 @@
   width: 100%;
   padding: 1.5rem 2rem;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: transparent;
+  border-bottom: 1.5px solid transparent;
 }
 
 .navbar.scrolled {
-  padding: 1rem 2rem;
-  border-radius: 0;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  padding: 0.9rem 2rem;
+  background-color: rgba(250, 246, 240, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--border-dark);
 }
 
 .nav-container {
@@ -24,22 +25,29 @@
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: -0.5px;
+  color: var(--text-main) !important;
+  font-style: italic;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
 }
 
 .desktop-nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .nav-link {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
   position: relative;
 }
 
@@ -54,8 +62,8 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: var(--gradient-main);
-  transition: width 0.3s ease;
+  background: var(--accent-primary);
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-link:hover::after {
@@ -66,6 +74,11 @@
   display: none;
   cursor: pointer;
   color: var(--text-main);
+  transition: transform 0.2s ease;
+}
+
+.mobile-toggle:hover {
+  transform: scale(1.1);
 }
 
 .mobile-nav {
@@ -78,13 +91,22 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  background-color: var(--bg-main);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  box-shadow: 4px 4px 0px var(--border-dark);
 }
 
 .mobile-nav-link {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 1.2rem;
-  font-weight: 500;
   color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--accent-primary);
 }
 
 @media (max-width: 768px) {

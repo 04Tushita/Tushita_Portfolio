@@ -1,70 +1,102 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Mail, FileText, ArrowUpRight, Github, Linkedin, Figma, Star } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
+  const handleScrollToProjects = (e) => {
+    e.preventDefault();
+    const element = document.querySelector('#projects');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero" id="home">
-      {/* Background elements */}
-      <div className="hero-bg-shape shape-1"></div>
-      <div className="hero-bg-shape shape-2"></div>
-      
+      {/* Decorative Floating Stars (Ref 1) */}
+      <div className="star-deco hero-star-1" style={{ top: '20%', left: '10%' }}>★</div>
+      <div className="star-deco hero-star-2" style={{ top: '15%', right: '15%', color: 'var(--accent-primary)' }}>★</div>
+      <div className="star-deco hero-star-3" style={{ bottom: '25%', left: '45%' }}>★</div>
+
       <div className="container hero-container">
+        {/* Left Column: Title & Text */}
         <motion.div 
           className="hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.h2 
-            className="hero-greeting"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            Hello, I'm
-          </motion.h2>
+          <div className="hero-intro-badge">
+            <span className="italic-serif">Hey there, I'm</span>
+          </div>
+
+          <h1 className="hero-title">
+            <span className="hero-stroke">UX/UI</span>
+            <span className="hero-filled">Designer</span>
+          </h1>
           
-          <motion.h1 
-            className="hero-title"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            Tushita Kaul.
-          </motion.h1>
-          
-          <motion.p 
-            className="hero-tagline heading-gradient"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            Designing meaningful user experiences through creativity and technology.
-          </motion.p>
-          
-          <motion.div 
-            className="hero-buttons"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="#contact" className="btn btn-secondary">Contact Me</a>
-          </motion.div>
-        </motion.div>
-        
-        <motion.div 
-          className="hero-image-wrapper"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          <div className="hero-image-inner glass-card">
-            {/* Using an abstract/modern illustration placeholder since we can't upload files directly */}
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abstract Art" className="hero-img" />
+          <p className="hero-tagline">
+            I craft clean, user-focused interfaces that make digital experiences effortless. My approach combines thoughtful design with practical functionality.
+          </p>
+
+          <div className="hero-footer-actions">
+            {/* Social Icons (Ref 2 bottom-left) */}
+            <div className="hero-socials">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Github size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://figma.com" target="_blank" rel="noopener noreferrer" aria-label="Figma">
+                <Figma size={20} />
+              </a>
+            </div>
           </div>
         </motion.div>
+        
+        {/* Right Column: Peachy Card with Portrait */}
+        <motion.div 
+          className="hero-image-wrapper"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          <div className="hero-image-container">
+            {/* Organic Peach backdrop (Ref 2) */}
+            <div className="hero-blob-card">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Tushita Kaul portrait" 
+                className="hero-portrait" 
+              />
+            </div>
+
+            {/* Overlapping circular action buttons (Ref 2) */}
+            <div className="hero-floating-actions">
+              <a href="#contact" className="hero-circle-btn btn-dark" aria-label="Send Email">
+                <Mail size={22} />
+              </a>
+              <a href="#about" className="hero-circle-btn btn-dark" aria-label="View Resume/Info">
+                <FileText size={22} />
+              </a>
+              <a href="#projects" onClick={handleScrollToProjects} className="hero-circle-btn btn-orange" aria-label="View Projects">
+                <ArrowUpRight size={26} />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Full-width continuous scrolling ticker (Ref 2 bottom) */}
+      <div className="hero-ticker-wrapper">
+        <div className="hero-ticker-content">
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
+        </div>
       </div>
     </section>
   );

@@ -1,24 +1,27 @@
 .experience-section {
   position: relative;
+  background-color: var(--bg-main);
+  padding-top: 2rem;
+  padding-bottom: 6rem;
 }
 
 .timeline {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
-/* Vertical Line */
+/* Vertical Outlined Timeline Line */
 .timeline::before {
   content: '';
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
+  width: 3px;
   height: 100%;
-  background: var(--glass-border);
+  background: var(--border-dark);
 }
 
 .timeline-item {
@@ -26,7 +29,7 @@
   justify-content: flex-end;
   padding-right: 50%;
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   width: 100%;
 }
 
@@ -36,68 +39,99 @@
   padding-left: 50%;
 }
 
+/* Timeline Icon Node */
 .timeline-icon {
   position: absolute;
-  top: 0;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  background: var(--bg-secondary);
+  background: var(--bg-main);
+  border: 1.8px solid var(--border-dark);
+  box-shadow: 3px 3px 0px var(--border-dark);
+  color: var(--text-main);
+  transition: all 0.3s ease;
 }
 
+.timeline-item:hover .timeline-icon {
+  transform: translateX(-50%) scale(1.08);
+  background-color: var(--accent-tertiary);
+}
+
+.icon-work {
+  color: var(--accent-primary);
+}
+
+.icon-education {
+  color: var(--accent-secondary);
+}
+
+/* Timeline Content Card */
 .timeline-content {
   width: calc(100% - 40px);
-  padding: 2rem;
+  padding: 2.2rem 2rem;
   position: relative;
-  transition: transform 0.3s ease;
+  text-align: left;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
   margin-right: 40px;
-  text-align: right;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
   margin-left: 40px;
 }
 
-.timeline-content:hover {
-  transform: translateY(-5px);
-  border-color: rgba(139, 92, 246, 0.4);
-}
-
+/* Timeline Duration Capsule */
 .timeline-duration {
   display: inline-block;
-  padding: 0.3rem 1rem;
+  padding: 0.35rem 1.1rem;
   border-radius: 2rem;
-  background: rgba(139, 92, 246, 0.1);
+  background: var(--bg-secondary);
+  border: 1.2px solid var(--border-dark);
   color: var(--accent-primary);
   font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-body);
 }
 
 .timeline-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
 }
 
 .timeline-company {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-body);
 }
 
 .timeline-description {
   color: var(--text-muted);
   font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+/* Deco Star Tweaks */
+.exp-star-1 {
+  font-size: 1.5rem;
+  animation-delay: 1.5s;
 }
 
 @media (max-width: 768px) {
@@ -109,6 +143,7 @@
     justify-content: flex-start;
     padding-right: 0;
     padding-left: 60px;
+    margin-bottom: 3.5rem;
   }
   
   .timeline-item:nth-child(even) {
@@ -117,11 +152,11 @@
   
   .timeline-icon {
     left: 25px;
+    top: 5px;
   }
   
   .timeline-item:nth-child(odd) .timeline-content {
     margin-right: 0;
-    text-align: left;
   }
   
   .timeline-item:nth-child(even) .timeline-content {

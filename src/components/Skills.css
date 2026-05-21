@@ -1,56 +1,82 @@
 .skills-section {
-  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  position: relative;
+  background-color: var(--bg-secondary);
+  padding-top: 2rem;
+  padding-bottom: 6rem;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .skill-card {
-  padding: 2rem 1.5rem;
+  padding: 2.2rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.3s ease;
+  background-color: var(--bg-card);
   cursor: default;
 }
 
 .skill-icon-wrapper {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid var(--border-dark);
+  background-color: var(--bg-main);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-
-.skill-icon {
-  color: var(--accent-secondary);
+  margin-bottom: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: var(--accent-primary);
+  box-shadow: 2px 2px 0px var(--border-dark);
 }
 
 .skill-card:hover .skill-icon-wrapper {
-  background: var(--gradient-main);
-}
-
-.skill-card:hover .skill-icon {
-  color: white;
+  background-color: var(--accent-tertiary);
+  color: var(--text-main);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--border-dark);
 }
 
 .skill-name {
   font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
 }
 
 .skill-category {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+/* Deco Star Tweaks */
+.skills-star-1 {
+  font-size: 1.6rem;
+  animation-delay: 2.5s;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.2rem;
+  }
+  .skill-card {
+    padding: 1.5rem 1rem;
+  }
 }

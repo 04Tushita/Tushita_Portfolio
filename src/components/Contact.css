@@ -1,6 +1,15 @@
+.contact-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
 .contact-container {
   display: flex;
   gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .contact-info {
@@ -8,17 +17,21 @@
   padding: 3rem;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-card);
 }
 
 .contact-info h3 {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  color: var(--text-main);
 }
 
 .contact-desc {
   color: var(--text-muted);
   margin-bottom: 2.5rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .contact-links {
@@ -32,13 +45,15 @@
   align-items: center;
   gap: 1rem;
   color: var(--text-main);
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
 }
 
 .contact-icon {
   color: var(--accent-primary);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .contact-link:hover {
@@ -46,12 +61,13 @@
 }
 
 .contact-link:hover .contact-icon {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .contact-form-wrapper {
-  flex: 1.5;
+  flex: 1.4;
   padding: 3rem;
+  background-color: var(--bg-card);
 }
 
 .contact-form {
@@ -63,52 +79,72 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .form-group label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  font-family: var(--font-body);
 }
 
 .form-control {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  border-radius: 0.5rem;
+  background-color: var(--bg-main);
+  border: 1.8px solid var(--border-dark);
+  border-radius: var(--radius-sm);
   padding: 1rem;
   color: var(--text-main);
   font-family: var(--font-body);
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--accent-primary);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+  background-color: var(--bg-card);
+  box-shadow: 3px 3px 0px var(--border-dark);
 }
 
 .submit-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .success-msg {
-  color: #10b981;
+  color: #2b9348;
+  font-weight: 700;
   text-align: center;
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+/* Deco Star Tweaks */
+.cont-star-1 {
+  font-size: 1.6rem;
+  animation-delay: 4.5s;
 }
 
 @media (max-width: 992px) {
   .contact-container {
     flex-direction: column;
+    gap: 2rem;
   }
   .contact-info, .contact-form-wrapper {
-    padding: 2rem;
+    padding: 2.2rem 2rem;
   }
 }
