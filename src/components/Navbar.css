@@ -1,22 +1,33 @@
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   padding: 1.5rem 2rem;
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   background-color: transparent;
-  border-bottom: 1.8px solid transparent;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  box-shadow: 0 0 0 rgba(255, 165, 185, 0);
 }
 
-/* Translucent Rose Pink Glassmorphism on Scroll */
+/* Translucent Rose Pink Glassmorphism Capsule on Scroll */
 .navbar.scrolled {
-  padding: 0.8rem 2rem;
-  background-color: rgba(255, 218, 224, 0.74); /* Premium rose-pink shade */
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1.8px solid var(--border-dark);
+  top: 1.25rem;
+  width: calc(100% - 3rem);
+  max-width: 1200px;
+  padding: 0.8rem 2.2rem;
+  background-color: rgba(255, 228, 233, 0.82); /* Premium soft rose-pink shade */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 24px 50px -12px rgba(255, 165, 185, 0.45), 
+    0 8px 20px -8px rgba(255, 165, 185, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 .nav-container {
@@ -121,17 +132,19 @@
 .mobile-nav {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 1rem;
-  right: 1rem;
+  top: calc(100% + 0.6rem);
+  left: 0;
+  right: 0;
   padding: 2rem;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-  background-color: var(--bg-main);
-  border: 1.8px solid var(--border-dark);
-  border-radius: var(--radius-md);
-  box-shadow: 4px 4px 0px var(--border-dark);
+  background-color: rgba(255, 235, 239, 0.95); /* Soft rose backdrop */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  box-shadow: 0 20px 40px -15px rgba(255, 180, 195, 0.35);
 }
 
 .mobile-nav-link {
