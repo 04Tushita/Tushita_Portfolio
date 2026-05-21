@@ -7,6 +7,10 @@
   overflow: hidden;
   padding-top: 120px; /* Offset for navbar */
   background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(255, 240, 235, 0.8) 0%, transparent 60%),
+    radial-gradient(rgba(42, 36, 33, 0.06) 1.5px, transparent 1.5px);
+  background-size: 100% 100%, 24px 24px;
 }
 
 .hero-container {

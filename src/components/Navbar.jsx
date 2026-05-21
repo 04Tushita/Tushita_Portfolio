@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -35,7 +35,6 @@ const Navbar = () => {
         setMobileMenuOpen(false);
       }
     } else if (path.startsWith('#')) {
-      // If we are on Project Detail page and clicking an anchor, go to home with hash
       setMobileMenuOpen(false);
       window.location.href = '/' + path;
     } else {
@@ -46,8 +45,11 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="logo">
-          Tushita Kaul.
+        <Link to="/" className="logo" aria-label="Home">
+          <div className="logo-monogram">
+            <span className="logo-char logo-char-t">T</span>
+            <span className="logo-char logo-char-k">K</span>
+          </div>
         </Link>
 
         <div className="desktop-nav">

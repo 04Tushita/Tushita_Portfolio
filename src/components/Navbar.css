@@ -7,14 +7,16 @@
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-color: transparent;
-  border-bottom: 1.5px solid transparent;
+  border-bottom: 1.8px solid transparent;
 }
 
+/* Translucent Rose Pink Glassmorphism on Scroll */
 .navbar.scrolled {
-  padding: 0.9rem 2rem;
-  background-color: rgba(250, 246, 240, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1.5px solid var(--border-dark);
+  padding: 0.8rem 2rem;
+  background-color: rgba(255, 218, 224, 0.74); /* Premium rose-pink shade */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1.8px solid var(--border-dark);
 }
 
 .nav-container {
@@ -23,20 +25,54 @@
   align-items: center;
 }
 
+/* Interlocking Monogram Logo */
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.logo-monogram {
+  font-family: var(--font-heading); /* Playfair Display */
+  font-size: 2.3rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
-  color: var(--text-main) !important;
   font-style: italic;
-  transition: transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0.8;
+  user-select: none;
 }
 
-.logo:hover {
-  transform: scale(1.03);
+.logo-char {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.25s ease;
 }
 
+.logo-char-t {
+  color: var(--text-main);
+  position: relative;
+  z-index: 2;
+  margin-right: -0.45em; /* Interlocks K behind the crossbar and stem */
+}
+
+.logo-char-k {
+  color: var(--accent-primary); /* Terracotta highlight */
+  position: relative;
+  z-index: 1;
+  transform: translateY(2px) scale(0.92);
+}
+
+/* Monogram Hover Animation */
+.logo:hover .logo-char-t {
+  transform: translateX(1.5px);
+  color: var(--accent-secondary);
+}
+
+.logo:hover .logo-char-k {
+  transform: translateY(2px) scale(0.92) translateX(-2.5px);
+}
+
+/* Nav Links */
 .desktop-nav {
   display: flex;
   gap: 2.2rem;
@@ -44,11 +80,12 @@
 
 .nav-link {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 0.98rem;
   color: var(--text-muted);
   transition: color 0.25s ease;
   position: relative;
+  text-decoration: none;
 }
 
 .nav-link:hover {
@@ -59,7 +96,7 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 2.2px;
   bottom: -4px;
   left: 0;
   background: var(--accent-primary);
@@ -92,16 +129,17 @@
   gap: 1.5rem;
   align-items: center;
   background-color: var(--bg-main);
-  border: 1.5px solid var(--border-dark);
+  border: 1.8px solid var(--border-dark);
   border-radius: var(--radius-md);
   box-shadow: 4px 4px 0px var(--border-dark);
 }
 
 .mobile-nav-link {
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.25rem;
   color: var(--text-main);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
