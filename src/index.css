@@ -2,20 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-  /* Color Palette (Warm Editorial / Organic Modern) */
-  --bg-main: #FAF6F0;       /* Warm Cream */
-  --bg-secondary: #FFF0EB;  /* Light Peach/Pink */
-  --bg-card: #FFFFFF;       /* Crisp White */
-  --text-main: #2A2421;     /* Dark warm charcoal/brown */
-  --text-muted: #7D726D;    /* Warm medium grey/brown */
+  /* Color Palette (Soft Twilight & Coral) */
+  --bg-main: #181E29;       /* Softer Dark Blue/Charcoal */
+  --bg-secondary: #212936;  /* Soft Dark Slate */
+  --bg-card: #262F3E;       /* Elevated Card Slate */
+  --text-main: #F1F5F9;     /* Soft White */
+  --text-muted: #A0AEC0;    /* Muted Gray Blue */
   
-  --accent-primary: #E76F51;   /* Terracotta/Coral */
-  --accent-secondary: #F4A261; /* Soft Peach */
-  --accent-tertiary: #E9C46A;  /* Warm Mustard Yellow */
+  --accent-primary: #0EA5E9;   /* Sky Blue */
+  --accent-secondary: #8B5CF6; /* Purple */
+  --accent-tertiary: #0284C7;  /* Dark Sky Blue */
+  --accent-gradient: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
   
   /* Borders and Shadows */
-  --border-color: rgba(42, 36, 33, 0.12);
-  --border-dark: #2A2421;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-dark: #020617;   /* Very dark slate/black for shadows */
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 8px;
@@ -43,6 +44,10 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--bg-main);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
@@ -67,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .heading-gradient {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -111,10 +116,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-cream {
   background-color: var(--bg-main);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 .bg-peach {
   background-color: var(--bg-secondary);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 /* Rounded Cards */
@@ -147,15 +160,14 @@ h1, h2, h3, h4, h5, h6 {
   border: 1.5px solid var(--border-dark);
   outline: none;
 }
-
 .btn-primary {
-  background: var(--accent-primary);
+  background: var(--accent-gradient);
   color: #ffffff;
   box-shadow: 3px 3px 0px var(--border-dark);
 }
 
 .btn-primary:hover {
-  background: var(--accent-secondary);
+  background: linear-gradient(135deg, #8B5CF6 0%, #0EA5E9 100%);
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--border-dark);
 }
@@ -200,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+  background: var(--accent-gradient);
 }
 
 /* Responsive adjust */

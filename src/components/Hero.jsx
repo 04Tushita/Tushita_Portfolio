@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Mail, FileText, ArrowUpRight, Github, Linkedin, Star } from 'lucide-react';
 import './Hero.css';
-import portraitImg from './Pic_2.png';
+import memojiImg from '../assets/memoji.png';
 
 const BehanceIcon = (props) => (
   <svg 
@@ -30,7 +30,7 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       {/* Decorative Floating Stars (Ref 1) */}
-      <div className="star-deco hero-star-1" style={{ top: '20%', left: '10%' }}>★</div>
+      <div className="star-deco hero-star-1" style={{ top: '15%', left: '4%' }}>★</div>
       <div className="star-deco hero-star-2" style={{ top: '15%', right: '15%', color: 'var(--accent-primary)' }}>★</div>
       <div className="star-deco hero-star-3" style={{ bottom: '25%', left: '45%' }}>★</div>
 
@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
 
           <h1 className="hero-title">
-            <span className="hero-stroke">UX/UI</span>
+            <span className="hero-stroke">UI/UX</span>
             <span className="hero-filled">Designer</span>
           </h1>
           
@@ -71,20 +71,20 @@ const Hero = () => {
           </div>
         </motion.div>
         
-        {/* Right Column: Peachy Card with Portrait */}
+        {/* Right Column: 3D Interactive Memoji */}
         <motion.div 
           className="hero-image-wrapper"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <div className="hero-image-container">
-            {/* Organic Peach backdrop (Ref 2) */}
-            <div className="hero-blob-card">
+          <div className="hero-image-container" style={{ perspective: 1000 }}>
+            {/* Static Avatar */}
+            <div className="hero-memoji-card">
               <img 
-                src={portraitImg} 
-                alt="Tushita Kaul portrait" 
-                className="hero-portrait" 
+                src={memojiImg} 
+                alt="UI/UX Designer Avatar" 
+                className="hero-memoji" 
               />
             </div>
 
