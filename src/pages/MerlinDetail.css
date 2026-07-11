@@ -104,7 +104,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.75rem;
 }
 
@@ -428,7 +428,7 @@
 }
 
 .feature-block-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 3rem;
 }
 
@@ -498,7 +498,7 @@
 
 /* Credits Footer */
 .merlin-page-credits {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   padding-top: 3rem;
 }
 

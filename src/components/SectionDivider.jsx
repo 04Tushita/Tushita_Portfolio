@@ -9,7 +9,7 @@ import React from 'react';
  * @param {string} colorFill - The color of the section BELOW the divider (or the filled path)
  * @param {boolean} inverted - If true, flips the SVG vertically
  */
-const SectionDivider = ({ type = "wave", bgFill = "#FAF6F0", colorFill = "#FFF0EB", inverted = false }) => {
+const SectionDivider = ({ type = "wave", bgFill = "var(--bg-secondary)", colorFill = "var(--bg-main)", inverted = false }) => {
   const getSvgPath = () => {
     switch (type) {
       case "scoop":

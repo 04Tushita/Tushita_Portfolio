@@ -19,13 +19,13 @@
   width: 100%;
   max-width: none;
   padding: 1rem 2rem;
-  background-color: rgba(24, 30, 41, 0.85); /* Dark blue slate */
+  background-color: rgba(250, 249, 246, 0.85); /* Light oat background */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 0;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -58,7 +58,7 @@
 }
 
 .logo-char-t {
-  color: #ffffff;
+  color: var(--text-main);
   position: relative;
   z-index: 2;
   margin-right: -0.45em; /* Interlocks K behind the crossbar and stem */
@@ -91,14 +91,14 @@
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.98rem;
-  color: #ffffff;
+  color: var(--text-main);
   transition: color 0.25s ease;
   position: relative;
   text-decoration: none;
 }
 
 .nav-link:hover {
-  color: var(--text-main);
+  color: var(--accent-primary);
 }
 
 .nav-link::after {
@@ -119,7 +119,7 @@
 .mobile-toggle {
   display: none;
   cursor: pointer;
-  color: #ffffff;
+  color: var(--text-main);
   transition: transform 0.2s ease;
 }
 
@@ -137,12 +137,12 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-  background-color: rgba(255, 235, 239, 0.95); /* Soft rose backdrop */
+  background-color: rgba(250, 249, 246, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
-  box-shadow: 0 20px 40px -15px rgba(255, 180, 195, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-link {

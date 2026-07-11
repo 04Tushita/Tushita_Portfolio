@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Mail, FileText, ArrowUpRight, Github, Linkedin, Star } from 'lucide-react';
 import './Hero.css';
-import memojiImg from '../assets/memoji.png';
+import memojiMotion from '../assets/memojimotion.webm';
 
 const BehanceIcon = (props) => (
   <svg 
@@ -79,11 +79,14 @@ const Hero = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <div className="hero-image-container" style={{ perspective: 1000 }}>
-            {/* Static Avatar */}
+            {/* Animated Avatar */}
             <div className="hero-memoji-card">
-              <img 
-                src={memojiImg} 
-                alt="UI/UX Designer Avatar" 
+              <video 
+                src={memojiMotion} 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
                 className="hero-memoji" 
               />
             </div>

@@ -65,7 +65,7 @@
   align-items: center;
   gap: 0.5rem;
   background: var(--accent-primary);
-  color: #ffffff;
+  color: var(--bg-main);
   border: 1.5px solid var(--border-dark);
   padding: 0.7rem 1.6rem;
   border-radius: 2rem;

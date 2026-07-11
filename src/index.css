@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-  /* Color Palette (Soft Twilight & Coral) */
-  --bg-main: #181E29;       /* Softer Dark Blue/Charcoal */
-  --bg-secondary: #212936;  /* Soft Dark Slate */
-  --bg-card: #262F3E;       /* Elevated Card Slate */
-  --text-main: #F1F5F9;     /* Soft White */
-  --text-muted: #A0AEC0;    /* Muted Gray Blue */
+  /* Color Palette (Warm Oat & Terracotta) */
+  --bg-main: #FAF9F6;       /* Warm Oatmeal / Off-white */
+  --bg-secondary: #F2EFE9;  /* Soft Warm Beige */
+  --bg-card: #FFFFFF;       /* Pure White Cards */
+  --text-main: #2D2C2A;     /* Deep Espresso/Charcoal */
+  --text-muted: #73706B;    /* Earthy Gray */
   
-  --accent-primary: #0EA5E9;   /* Sky Blue */
-  --accent-secondary: #8B5CF6; /* Purple */
-  --accent-tertiary: #0284C7;  /* Dark Sky Blue */
-  --accent-gradient: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
+  --accent-primary: #D26952;   /* Terracotta / Rust */
+  --accent-secondary: #E3A06E; /* Warm Ochre / Sand */
+  --accent-tertiary: #A64D3A;  /* Deep Terracotta */
+  --accent-gradient: linear-gradient(135deg, #D26952 0%, #E3A06E 100%);
   
   /* Borders and Shadows */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-dark: #020617;   /* Very dark slate/black for shadows */
+  --border-color: rgba(45, 44, 42, 0.08);
+  --border-dark: #2D2C2A;   /* Deep Espresso for shadows */
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 8px;
@@ -45,8 +45,8 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-main);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 30px 30px;
   color: var(--text-main);
   line-height: 1.6;
@@ -117,16 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 .bg-cream {
   background-color: var(--bg-main);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
 .bg-peach {
   background-color: var(--bg-secondary);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
@@ -162,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary {
   background: var(--accent-gradient);
-  color: #ffffff;
+  color: #FFFFFF;
   box-shadow: 3px 3px 0px var(--border-dark);
 }
 
