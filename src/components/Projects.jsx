@@ -40,7 +40,19 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <div className="project-img-container">
-                  <img src={project.image} alt={project.title} className="project-img" />
+                  {project.image.endsWith('.mov') || project.image.endsWith('.mp4') ? (
+                    <video 
+                      src={project.image} 
+                      className="project-img" 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline 
+                      style={{ objectFit: 'cover', width: '100%', height: '100%', display: 'block' }}
+                    />
+                  ) : (
+                    <img src={project.image} alt={project.title} className="project-img" />
+                  )}
                   <div className="project-overlay">
                     <Link to={`/project/${project.id}`} className="project-link-btn btn">
                       View Case Study <ArrowUpRight size={18} />

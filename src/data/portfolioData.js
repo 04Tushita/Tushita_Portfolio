@@ -11,19 +11,22 @@ import {
 
 export const projects = [
   {
-    id: "health-app",
-    title: "VitalSync Healthcare App",
-    shortDescription: "An AI-powered patient monitoring mobile application focusing on accessibility and seamless UX.",
-    tags: ["UI/UX Design", "Mobile App", "HealthTech"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    role: "Lead Product Designer",
-    duration: "Jan 2024 - Apr 2024",
-    problem: "Patients often struggle to keep track of their vital signs and medication schedules, leading to decreased health outcomes and increased anxiety.",
-    solution: "VitalSync offers a simplified, calming interface that uses AI to predict health trends and gently remind users of their routines without overwhelming them.",
+    id: "merlin",
+    title: "Designing Merlin –",
+    subtitle: "An AI-Assisted Workspace for Tiered Intelligence Reporting",
+    shortDescription: "An AI-Assisted Workspace for Tiered Intelligence Reporting",
+    tags: ["Studio Project", "Enterprise UX", "Human-AI Collaboration"],
+    image: "/projects/merlin/Videos/Intro_video.mov",
+    role: "UX Research • UX Design • UI Design",
+    duration: "February 2026 – April 2026",
+    problem: "Intelligence analysts work in environments where every reporting decision has operational consequences. A single report may need to be rewritten multiple times for different audiences, each with its own security clearance, mission requirements, and level of technical detail.",
+    solution: "We designed Merlin – an AI-augmented workspace that combines a traditional document-based editor with a node-based relationship visualization, built in partnership with the Laboratory of Analytical Sciences (LAS).",
     features: [
-      "Intuitive daily dashboard with predictive health insights.",
-      "Accessible typography and high-contrast color modes.",
-      "Seamless integration with wearable health devices."
+      "Node-Based Traceability",
+      "Customer Group Management",
+      "Cross-Tier Highlight Synchronization",
+      "Multi-tier Viewing",
+      "Release Checklist"
     ]
   },
   {
