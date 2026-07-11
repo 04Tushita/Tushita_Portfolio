@@ -19,66 +19,84 @@ const MerlinDetail = ({ project }) => {
 
   return (
     <div className="merlin-detail">
-      {/* Back button */}
-      <div className="container merlin-back-container">
-        <Link to="/#projects" className="back-link">
-          <ArrowLeft size={20} /> Back to Projects
-        </Link>
-      </div>
+      {/* Immersive Hero Header with cover.png as background */}
+      <div className="merlin-hero-banner">
+        <div className="merlin-hero-banner-overlay"></div>
+        <div className="container merlin-hero-banner-content">
+          <Link to="/#projects" className="back-link-over-bg">
+            <ArrowLeft size={20} /> Back to Projects
+          </Link>
+          
+          <div className="merlin-hero-banner-grid">
+            <div className="merlin-titles-over-bg">
+              <h1 className="merlin-main-title-over-bg">Designing Merlin</h1>
+              <p className="merlin-main-subheading-over-bg">An AI-Assisted Workspace for Tiered Intelligence Reporting</p>
+              
+              <div className="merlin-meta-pills-over-bg">
+                <span className="meta-pill-over-bg">Studio Project</span>
+                <span className="meta-pill-over-bg">Enterprise UX</span>
+                <span className="meta-pill-over-bg">Human-AI Collaboration</span>
+              </div>
+            </div>
 
-      {/* Main Cover Image */}
-      <div className="merlin-cover-container">
-        <img 
-          src="/projects/merlin/Pics/cover.png" 
-          alt="Designing Merlin Cover" 
-          className="merlin-cover-img" 
-        />
+            <div className="merlin-info-panel-over-bg glass-card-over-bg">
+              <h3 className="info-panel-title-over-bg">Project Information</h3>
+              <div className="info-items-over-bg">
+                <div className="info-item-over-bg">
+                  <span className="info-label-over-bg"><User size={16} /> Role</span>
+                  <span className="info-value-over-bg">UX Research • UX Design • UI Design</span>
+                </div>
+                <div className="info-item-over-bg">
+                  <span className="info-label-over-bg"><Users size={16} /> Team</span>
+                  <span className="info-value-over-bg">3 Designers</span>
+                </div>
+                <div className="info-item-over-bg">
+                  <span className="info-label-over-bg"><Calendar size={16} /> Duration</span>
+                  <span className="info-value-over-bg">February 2026 – April 2026</span>
+                </div>
+                <div className="info-item-over-bg">
+                  <span className="info-label-over-bg"><Building size={16} /> Partner</span>
+                  <span className="info-value-over-bg">Laboratory of Analytical Sciences (LAS)</span>
+                </div>
+                <div className="info-item-over-bg">
+                  <span className="info-label-over-bg"><BookOpen size={16} /> Course</span>
+                  <span className="info-value-over-bg">MGXD Design Studio II</span>
+                </div>
+                <div className="info-item-over-bg" style={{ alignItems: 'center' }}>
+                  <span className="info-label-over-bg"><Wrench size={16} /> Tools</span>
+                  <span className="info-value-over-bg tools-icons-grid">
+                    <span className="tool-tile figma-tile" data-tooltip="Figma">
+                      <svg viewBox="0 0 38 38" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9.5C19 6.46 16.54 4 13.5 4S8 6.46 8 9.5 10.46 15 13.5 15c3.04 0 5.5-2.46 5.5-5.5Z" fill="#F24E1E"/>
+                        <path d="M19 9.5c0 3.04 2.46 5.5 5.5 5.5S30 12.54 30 9.5 27.54 4 24.5 4 19 6.46 19 9.5Z" fill="#FF7262"/>
+                        <path d="M19 19c0-3.04-2.46-5.5-5.5-5.5S8 15.96 8 19s2.46 5.5 5.5 5.5c3.04 0 5.5-2.46 5.5-5.5Z" fill="#A259FF"/>
+                        <path d="M19 28.5c0-3.04-2.46-5.5-5.5-5.5S8 25.46 8 28.5 10.46 34 13.5 34c3.04 0 5.5-2.46 5.5-5.5Z" fill="#1ABCFE"/>
+                        <path d="M19 19c0 3.04 2.46 5.5 5.5 5.5S30 22.04 30 19s-2.46-5.5-5.5-5.5S19 15.96 19 19Z" fill="#0ACF83"/>
+                      </svg>
+                    </span>
+                    <span className="tool-tile figjam-tile" data-tooltip="FigJam">
+                      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" fill="#FF70A6"/>
+                      </svg>
+                    </span>
+                    <span className="tool-tile ae-tile" data-tooltip="Adobe After Effects">
+                      Ae
+                    </span>
+                    <span className="tool-tile ai-tile" data-tooltip="Adobe Illustrator">
+                      Ai
+                    </span>
+                    <span className="tool-tile notebooklm-tile" data-tooltip="NotebookLM">
+                      NLM
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="container merlin-container">
-        {/* Header and Project Info Panel */}
-        <section className="merlin-header-section">
-          <div className="merlin-titles">
-            <h1 className="merlin-main-title">Designing Merlin –</h1>
-            <p className="merlin-main-subheading">An AI-Assisted Workspace for Tiered Intelligence Reporting</p>
-            
-            <div className="merlin-meta-pills">
-              <span className="meta-pill">Studio Project</span>
-              <span className="meta-pill">Enterprise UX</span>
-              <span className="meta-pill">Human-AI Collaboration</span>
-            </div>
-          </div>
-
-          <div className="merlin-info-panel glass-card">
-            <h3 className="info-panel-title">Project Information</h3>
-            <div className="info-items">
-              <div className="info-item">
-                <span className="info-label"><User size={16} /> Role</span>
-                <span className="info-value">UX Research • UX Design • UI Design</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label"><Users size={16} /> Team</span>
-                <span className="info-value">3 Designers</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label"><Calendar size={16} /> Duration</span>
-                <span className="info-value">February 2026 – April 2026</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label"><Building size={16} /> Partner</span>
-                <span className="info-value">Laboratory of Analytical Sciences (LAS)</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label"><BookOpen size={16} /> Course</span>
-                <span className="info-value">MGXD Design Studio II</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label"><Wrench size={16} /> Tools</span>
-                <span className="info-value">Figma, FigJam, Adobe After Effects , NotebookLM ,Adobe Illustrator</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Overview */}
         <section className="merlin-section">
@@ -150,23 +168,38 @@ const MerlinDetail = ({ project }) => {
 
           <div className="key-insights-block mt-8">
             <h3 className="section-subheading-bold">Key insights:</h3>
-            <ul className="key-insights-list">
-              <li>
-                <strong>Accuracy takes priority over speed</strong> - Analysts consistently emphasized that they would rather delay a report than release information they could not fully trust.
-              </li>
-              <li>
-                <strong>Revision tracking is highly manual</strong> - Comparing report versions often requires rereading entire documents to identify changes.
-              </li>
-              <li>
-                <strong>Policy knowledge is largely experience-based</strong> - Many release decisions depend on institutional memory rather than centralized guidance.
-              </li>
-              <li>
-                <strong>Coordination extends beyond the reporting tool</strong> - External approvals and communication frequently happen through email and phone calls, making progress difficult to track.
-              </li>
-              <li>
-                <strong>Analysts need foresight, not just notifications</strong> - Understanding what work is approaching their queue helps them plan and prioritize more effectively.
-              </li>
-            </ul>
+            <div className="key-insights-table-container mt-4">
+              <table className="key-insights-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: '30%' }}>Insight</th>
+                    <th style={{ width: '70%' }}>Observation & Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="insight-highlight">Accuracy takes priority over speed</td>
+                    <td>Analysts consistently emphasized that they would rather delay a report than release information they could not fully trust.</td>
+                  </tr>
+                  <tr>
+                    <td className="insight-highlight">Revision tracking is highly manual</td>
+                    <td>Comparing report versions often requires rereading entire documents to identify changes.</td>
+                  </tr>
+                  <tr>
+                    <td className="insight-highlight">Policy knowledge is largely experience-based</td>
+                    <td>Many release decisions depend on institutional memory rather than centralized guidance.</td>
+                  </tr>
+                  <tr>
+                    <td className="insight-highlight">Coordination extends beyond the reporting tool</td>
+                    <td>External approvals and communication frequently happen through email and phone calls, making progress difficult to track.</td>
+                  </tr>
+                  <tr>
+                    <td className="insight-highlight">Analysts need foresight, not just notifications</td>
+                    <td>Understanding what work is approaching their queue helps them plan and prioritize more effectively.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div className="section-image-container mt-8">
@@ -231,30 +264,19 @@ const MerlinDetail = ({ project }) => {
             Through classroom critiques and discussions with our instructor, we refined these ideas into clearer interaction patterns before translating them into mid-fidelity screens.
           </p>
 
-          <div className="what-changed-block mt-6">
-            <h3 className="section-subheading-bold">What changed:</h3>
-            <div className="what-changed-cards mt-4">
-              <div className="small-card text-center">Reduced visual clutter.</div>
-              <div className="small-card text-center">Simplified navigation.</div>
-              <div className="small-card text-center">Improved hierarchy.</div>
-              <div className="small-card text-center">Reduced reading effort.</div>
-              <div className="small-card text-center">Better grouped AI recommendations.</div>
-            </div>
-          </div>
-
           <div className="critique-comparison-container mt-8">
             <div className="comparison-images-grid">
               <div className="comparison-image-item">
                 <img src="/projects/merlin/Pics/initial.png" alt="Initial screens" />
-                <span>Initial Screens</span>
+                <span>Initial Idea Sketches</span>
               </div>
               <div className="comparison-image-item">
                 <img src="/projects/merlin/Pics/concepts.png" alt="Concept Sketch" />
-                <span>Concept Sketch</span>
+                <span>Concepts Sketches</span>
               </div>
               <div className="comparison-image-item">
                 <img src="/projects/merlin/Pics/final.png" alt="Final Screens" />
-                <span>Final Screens</span>
+                <span>Final Variation Sketches</span>
               </div>
             </div>
           </div>
@@ -461,7 +483,7 @@ const MerlinDetail = ({ project }) => {
               <p className="mt-2">Minimizes repetitive comparisons and manual tracking across report tiers.</p>
             </div>
             <div className="impact-card rounded-rect text-center">
-              <h3 className="card-item-title text-glow-blue">= Greater Analyst Confidence</h3>
+              <h3 className="card-item-title text-glow-blue">Greater Analyst Confidence</h3>
               <p className="mt-2">Supports informed, policy-aware decisions while maintaining human oversight.</p>
             </div>
           </div>
