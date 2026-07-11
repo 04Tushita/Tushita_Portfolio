@@ -61,8 +61,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   border: 1.5px solid var(--border-dark);
   border-radius: 2px;
+  filter: brightness(1.12) contrast(1.04) saturate(1.04);
 }
 
 .polaroid-caption {

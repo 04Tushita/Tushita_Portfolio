@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoHovered, setLogoHovered] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -45,10 +46,44 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="logo" aria-label="Home">
-          <div className="logo-monogram">
-            <span className="logo-char logo-char-t">T</span>
-            <span className="logo-char logo-char-k">K</span>
+        <Link 
+          to="/" 
+          className="logo" 
+          aria-label="Home"
+          onMouseEnter={() => setLogoHovered(true)}
+          onMouseLeave={() => setLogoHovered(false)}
+        >
+          <div className="logo-tk-interactive">
+            <AnimatePresence>
+              {!logoHovered && (
+                <motion.div 
+                  key="initials"
+                  initial={{ opacity: 0, y: "-50%", scale: 0.95, filter: 'blur(2px)' }}
+                  animate={{ opacity: 1, y: "-50%", scale: 1, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: "-50%", scale: 0.95, filter: 'blur(2px)' }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="logo-initials-view"
+                >
+                  <span className="char-t">T</span>
+                  <span className="char-k">K</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            
+            <AnimatePresence>
+              {logoHovered && (
+                <motion.span 
+                  key="full"
+                  initial={{ opacity: 0, y: "-50%", x: -8, filter: 'blur(2px)' }}
+                  animate={{ opacity: 1, y: "-50%", x: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: "-50%", x: -8, filter: 'blur(2px)' }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="logo-full-view"
+                >
+                  Tkaul
+                </motion.span>
+              )}
+            </AnimatePresence>
           </div>
         </Link>
 

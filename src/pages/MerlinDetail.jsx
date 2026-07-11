@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowLeft, 
   User, 
@@ -13,9 +13,99 @@ import {
 import './MerlinDetail.css';
 
 const MerlinDetail = ({ project }) => {
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const clickScrollY = useRef(0);
+  const sectionRef = useRef(null);
+
+  const features = [
+    {
+      id: 0,
+      title: "Node-Based Traceability",
+      gif: "/projects/merlin/gifs/node.gif",
+      description: "Aisha can view a full node map of each report, showing its history of revisions and external decisions across tiers. The nodes also connect related reports and preserve AI-human interactions, giving Aisha full transparency into how decisions and edits were made."
+    },
+    {
+      id: 1,
+      title: "Customer Group Management",
+      gif: "/projects/merlin/gifs/customer.gif",
+      description: "Aisha can review, approve, or edit based on customer distribution groups directly within the report view. She can approve expansion requests instantly or route them to a senior authority, ensuring flexible yet policy-compliant dissemination control."
+    },
+    {
+      id: 2,
+      title: "Cross-Tier Highlight Synchronization",
+      gif: "/projects/merlin/gifs/highlight.gif",
+      description: "When Aisha highlights content in one tier, the system automatically reflects corresponding changes across all opened tiers. She can also query the AI to compare relevant sections, and add annotations that route back to other analysts."
+    },
+    {
+      id: 3,
+      title: "Multi-tier Viewing",
+      gif: "/projects/merlin/gifs/multi.gif",
+      description: "While reviewing a report, Aisha is able to pull up to five tiers beside each other to run comparisons with the AI."
+    },
+    {
+      id: 4,
+      title: "Release Checklist",
+      gif: "/projects/merlin/gifs/checklist.gif",
+      description: "Before releasing a report, Aisha gets a consolidated checklist of all completed requirements. It highlights key confirmations like classification, source protection, and tier approvals in one place for quick validation. This checklist is also accessible anytime through the expanded report view to support ongoing release readiness."
+    }
+  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Autoplay rotation every 5 seconds
+  useEffect(() => {
+    if (!isAutoPlay) return;
+    const timer = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % features.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isAutoPlay, features.length]);
+
+  // Resume autoplay when the user scrolls away from the click point
+  useEffect(() => {
+    if (isAutoPlay) return;
+
+    const handleScroll = () => {
+      const delta = Math.abs(window.scrollY - clickScrollY.current);
+      if (delta > 150) { // resume autoplay if scrolled > 150px
+        setIsAutoPlay(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isAutoPlay]);
+
+  // Resume autoplay when section goes out of viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setIsAutoPlay(true);
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const handleTabClick = (index) => {
+    setActiveFeature(index);
+    setIsAutoPlay(false);
+    clickScrollY.current = window.scrollY;
+  };
 
   return (
     <div className="merlin-detail">
@@ -167,7 +257,6 @@ const MerlinDetail = ({ project }) => {
           </div>
 
           <div className="key-insights-block mt-8">
-            <h3 className="section-subheading-bold">Key insights:</h3>
             <div className="key-insights-table-container mt-4">
               <table className="key-insights-table">
                 <thead>
@@ -213,7 +302,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Mapping Aisha's Workflow */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Mapping Aisha's Workflow:</h2>
+          <h2 className="section-title-bold">Mapping Aisha's Workflow</h2>
           <p className="mt-4">
             Before designing any interface concepts, we mapped her responsibilities throughout the reporting lifecycle to understand where she gathered information, where decisions were made, and where uncertainty entered the process.
           </p>
@@ -232,7 +321,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Key Pain Points Considered */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Key Pain Points Considered:</h2>
+          <h2 className="section-title-bold">Key Pain Points Considered</h2>
           <div className="pain-points-grid mt-6">
             <div className="pain-point-card rounded-rect">
               <h3 className="card-item-title text-glow-blue">Lacks Personalized Workspace</h3>
@@ -251,7 +340,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Exploring Ideas */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Exploring Ideas:</h2>
+          <h2 className="section-title-bold">Exploring Ideas</h2>
           <p className="mt-4">
             Here, we began exploring multiple interface concepts through rapid sketching. Rather than committing to a single solution, each team member independently generated concepts
           </p>
@@ -259,7 +348,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Designing Through Critique */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Designing Through Critique:</h2>
+          <h2 className="section-title-bold">Designing Through Critique</h2>
           <p className="mt-4">
             Through classroom critiques and discussions with our instructor, we refined these ideas into clearer interaction patterns before translating them into mid-fidelity screens.
           </p>
@@ -284,7 +373,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Refining the Workflow */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Refining the Workflow:</h2>
+          <h2 className="section-title-bold">Refining the Workflow</h2>
           <p className="mt-4">
             As our understanding of Aisha's responsibilities evolved, we realized that her work extended across three distinct but interconnected activities. Rather than designing one large interface, we reorganized the workflow into focused segments that reflected how she actually approached report dissemination.
           </p>
@@ -292,9 +381,9 @@ const MerlinDetail = ({ project }) => {
           {/* Workflow flow chart */}
           <div className="workflow-flowchart-container mt-8">
             <div className="flowchart-box">Customer Management</div>
-            <div className="flowchart-arrow">↓</div>
+            <div className="flowchart-arrow">→</div>
             <div className="flowchart-box">Aisha’s understanding of the Report</div>
-            <div className="flowchart-arrow">↓</div>
+            <div className="flowchart-arrow">→</div>
             <div className="flowchart-box">Team’s understanding of Aisha’s Feedback</div>
           </div>
 
@@ -309,7 +398,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Bringing Ideas Back to the Experts */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Bringing Ideas Back to the Experts:</h2>
+          <h2 className="section-title-bold">Bringing Ideas Back to the Experts</h2>
           <div className="section-content-text">
             <p>
               Rather than treating our first prototypes as finished solutions, we presented them to intelligence analysts for another round of evaluation. This session allowed us to validate whether our concepts aligned with real reporting practices and identify areas that required further refinement.
@@ -334,7 +423,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Design System */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Design System:</h2>
+          <h2 className="section-title-bold">Design System</h2>
           <p className="mt-4">
             Since analysts spend long periods reading, reviewing, and comparing intelligence reports, the interface needed to remain visually calm while supporting large amounts of complex information.
           </p>
@@ -345,7 +434,7 @@ const MerlinDetail = ({ project }) => {
 
         {/* Designing the Final Workflow */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Designing the Final Workflow:</h2>
+          <h2 className="section-title-bold">Designing the Final Workflow</h2>
           <p className="mt-4">
             Throughout the design process, two interaction models consistently emerged during concept exploration. One emphasized a familiar document-based reporting workspace, while the other introduced a node-based visualization that exposed relationships between reports, decisions, and workflow dependencies.
           </p>
@@ -359,120 +448,92 @@ const MerlinDetail = ({ project }) => {
 
         {/* Final Scenario Video */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Final Scenario Video:</h2>
+          <h2 className="section-title-bold">Final Scenario Video</h2>
           
           <p className="mt-4 mb-6">
             In this scenario, Aisha, a senior report releaser, uses an AI-augmented workspace to manage and disseminate intelligence ahead of the peace talks between Behrainabad and Zendia. The system surfaces relevant reports, flags policy and alignment issues, and supports her in comparing tiered narratives. With AI assistance, she resolves framing conflicts and ensures intelligence is accurate, compliant, and delivered to the right customers.
           </p>
 
-          <div className="merlin-video-card glass-card">
-            <iframe 
-              src="https://drive.google.com/file/d/1yyUjp0x5rsI3npByHh5uFrBGNIkM1Qhg/preview" 
-              className="merlin-full-video"
-              allow="autoplay"
-              title="Final Scenario Video"
-              style={{ border: 'none' }}
-            ></iframe>
-          </div>
-          <div className="text-center mt-6">
-            <a 
-              href="https://drive.google.com/file/d/1yyUjp0x5rsI3npByHh5uFrBGNIkM1Qhg/view?usp=drive_link" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-secondary"
-            >
-              Watch on Google Drive
-            </a>
+          <div className="scenario-video-layout">
+            <div className="merlin-video-card glass-card">
+              <iframe 
+                src="https://drive.google.com/file/d/1yyUjp0x5rsI3npByHh5uFrBGNIkM1Qhg/preview" 
+                className="merlin-full-video"
+                allow="autoplay"
+                title="Final Scenario Video"
+                style={{ border: 'none' }}
+              ></iframe>
+            </div>
+            <div className="video-actions-side">
+              <a 
+                href="https://drive.google.com/file/d/1yyUjp0x5rsI3npByHh5uFrBGNIkM1Qhg/view?usp=drive_link" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="gdrive-action-btn"
+                data-tooltip="Watch on Google Drive"
+              >
+                <div className="gdrive-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24">
+                    <path fill="#0ba25e" d="M18.3 8.8L0 40.5 10.7 59 29 27.3z"/>
+                    <path fill="#fccd48" d="M61 35.3L42.7 3.6H21.3l18.3 31.7H61z"/>
+                    <path fill="#2a71e9" d="M28.7 40.5L18 59h35.3L64 40.5H28.7z"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Features */}
-        <section className="merlin-section">
-          <h2 className="section-title-bold">Features:</h2>
+        <section className="merlin-section" ref={sectionRef}>
+          <h2 className="section-title-bold">Features</h2>
           
-          <div className="features-showcase-container mt-6">
-            
-            {/* Feature 1 */}
-            <div className="feature-block-item mt-8">
-              <h3 className="feature-block-title">Feature 1:Node-Based Traceability.</h3>
-              <div className="feature-media-desc-grid mt-4">
-                <div className="feature-gif-wrapper">
-                  <img src="/projects/merlin/gifs/node.gif" alt="Node-Based Traceability" className="feature-gif" />
-                </div>
-                <div className="feature-desc-text">
-                  <p>
-                    Aisha can view a full node map of each report, showing its history of revisions and external decisions across tiers. The nodes also connect related reports and preserve AI-human interactions, giving Aisha full transparency into how decisions and edits were made.
-                  </p>
-                </div>
-              </div>
+          <div className="features-tabs-container mt-6">
+            <div className="features-menu-bar">
+              {features.map((feature, index) => (
+                <button
+                  key={feature.id}
+                  className={`feature-tab-btn ${activeFeature === index ? 'active' : ''}`}
+                  onClick={() => handleTabClick(index)}
+                >
+                  <span className="tab-num">0{index + 1}</span>
+                  <span className="tab-title">{feature.title}</span>
+                </button>
+              ))}
             </div>
 
-            {/* Feature 2 */}
-            <div className="feature-block-item mt-12">
-              <h3 className="feature-block-title">Feature 2:Customer Group Management</h3>
-              <div className="feature-media-desc-grid mt-4">
-                <div className="feature-gif-wrapper">
-                  <img src="/projects/merlin/gifs/customer.gif" alt="Customer Group Management" className="feature-gif" />
-                </div>
-                <div className="feature-desc-text">
-                  <p>
-                    Aisha can review, approve, or edit based on customer distribution groups directly within the report view. She can approve expansion requests instantly or route them to a senior authority, ensuring flexible yet policy-compliant dissemination control.
-                  </p>
-                </div>
-              </div>
+            <div className="active-feature-content">
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={activeFeature}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="feature-media-desc-grid"
+                >
+                  <div className="feature-gif-wrapper">
+                    <img 
+                      src={features[activeFeature].gif} 
+                      alt={features[activeFeature].title} 
+                      className="feature-gif" 
+                    />
+                  </div>
+                  <div className="feature-desc-text">
+                    <h3 className="active-feature-title">{features[activeFeature].title}</h3>
+                    <p className="mt-4">
+                      {features[activeFeature].description}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-
-            {/* Feature 3 */}
-            <div className="feature-block-item mt-12">
-              <h3 className="feature-block-title">Feature 3:Cross-Tier Highlight Synchronization</h3>
-              <div className="feature-media-desc-grid mt-4">
-                <div className="feature-gif-wrapper">
-                  <img src="/projects/merlin/gifs/highlight.gif" alt="Cross-Tier Highlight Synchronization" className="feature-gif" />
-                </div>
-                <div className="feature-desc-text">
-                  <p>
-                    When Aisha highlights content in one tier, the system automatically reflects corresponding changes across all opened tiers. She can also query the AI to compare relevant sections, and add annotations that route back to other analysts.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="feature-block-item mt-12">
-              <h3 className="feature-block-title">Feature 4:Multi-tier Viewing</h3>
-              <div className="feature-media-desc-grid mt-4">
-                <div className="feature-gif-wrapper">
-                  <img src="/projects/merlin/gifs/multi.gif" alt="Multi-tier Viewing" className="feature-gif" />
-                </div>
-                <div className="feature-desc-text">
-                  <p>
-                    While reviewing a report, Aisha is able to pull up to five tiers beside each other to run comparisons with the AI.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 5 */}
-            <div className="feature-block-item mt-12">
-              <h3 className="feature-block-title">Feature 5:Release Checklist</h3>
-              <div className="feature-media-desc-grid mt-4">
-                <div className="feature-gif-wrapper">
-                  <img src="/projects/merlin/gifs/checklist.gif" alt="Release Checklist" className="feature-gif" />
-                </div>
-                <div className="feature-desc-text">
-                  <p>
-                    Before releasing a report, Aisha gets a consolidated checklist of all completed requirements. It highlights key confirmations like classification, source protection, and tier approvals in one place for quick validation. This checklist is also accessible anytime through the expanded report view to support ongoing release readiness.
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </section>
 
         {/* Impact */}
         <section className="merlin-section">
-          <h2 className="section-title-bold">Impact:</h2>
+          <h2 className="section-title-bold">Impact</h2>
           <div className="impact-grid mt-6">
             <div className="impact-card rounded-rect text-center">
               <h3 className="card-item-title text-glow-blue">Improved Transparency</h3>

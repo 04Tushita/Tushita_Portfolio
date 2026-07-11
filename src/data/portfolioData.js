@@ -1,8 +1,8 @@
-import { 
-  Figma, 
-  PenTool, 
-  Layout, 
-  Code2, 
+import {
+  Figma,
+  PenTool,
+  Layout,
+  Code2,
   MonitorSmartphone,
   Smartphone,
   Palette,
@@ -67,34 +67,34 @@ export const experience = [
   {
     id: 1,
     type: 'work',
-    title: "Senior Product Designer",
-    company: "TechNova Solutions",
-    duration: "2022 - Present",
-    description: "Leading the design of enterprise SaaS products. Integrated AI-driven features into the core user workflow, improving task efficiency by 40%."
+    title: "Lead Social Media Content Creator for MGXD Departementr",
+    company: "North Carolina State University",
+    duration: "Sep' 2025  - Apr' 2026",
   },
   {
     id: 2,
-    type: 'work',
-    title: "UI/UX Designer",
-    company: "Creative Pulse Agency",
-    duration: "2020 - 2022",
-    description: "Designed responsive websites and mobile applications for diverse clients. Conducted user research, wireframing, and interactive prototyping."
+    type: 'education',
+    title: "Master's in Graphic & Experience Design",
+    company: "North Carolina State University",
+    duration: "Aug' 2025 - Present",
+
+    ///description: "Designed responsive websites and mobile applications for diverse clients. Conducted user research, wireframing, and interactive prototyping."
   },
   {
     id: 3,
-    type: 'education',
-    title: "Master's in Human-Computer Interaction",
-    company: "Design Institute of Technology",
-    duration: "2018 - 2020",
-    description: "Focused on user-centered design, cognitive psychology, and the integration of AI in user interfaces."
+    type: 'work',
+    title: "Associate Software Engineerr",
+    company: "Tech Mahindra",
+    duration: "Dec' 2024 - May' 2025",
+    //description: "Focused on user-centered design, cognitive psychology, and the integration of AI in user interfaces."
   },
   {
     id: 4,
     type: 'education',
-    title: "Bachelor of Fine Arts in Graphic Design",
-    company: "State University",
-    duration: "2014 - 2018",
-    description: "Developed strong foundational skills in visual design, typography, and color theory."
+    title: "Bachelor of Technology in Computer Science with Specialization in AI & ML",
+    company: "Vellore Institute of Technology, Bhopal",
+    duration: "Jul' 2020 - May' 2024",
+    //description: "Developed strong foundational skills in visual design, typography, and color theory."
   }
 ];
 
