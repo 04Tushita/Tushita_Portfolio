@@ -64,6 +64,11 @@
   background-color: var(--accent-tertiary);
 }
 
+.timeline-item:hover .timeline-icon .icon-work,
+.timeline-item:hover .timeline-icon .icon-education {
+  color: #FFFFFF;
+}
+
 .icon-work {
   color: var(--accent-primary);
 }

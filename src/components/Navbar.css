@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 40px;
-  min-width: 65px; /* Keeps layout from shifting when signature is shown */
+  min-width: 130px; /* Keeps layout from shifting when full name is shown */
   user-select: none;
 }
 

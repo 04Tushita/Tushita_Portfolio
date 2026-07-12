@@ -52,6 +52,12 @@ const Navbar = () => {
           aria-label="Home"
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
+          onClick={(e) => {
+            if (location.pathname === '/') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
         >
           <div className="logo-tk-interactive">
             <AnimatePresence>
@@ -74,13 +80,13 @@ const Navbar = () => {
               {logoHovered && (
                 <motion.span 
                   key="full"
-                  initial={{ opacity: 0, y: "-50%", x: -8, filter: 'blur(2px)' }}
-                  animate={{ opacity: 1, y: "-50%", x: 0, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, y: "-50%", x: -8, filter: 'blur(2px)' }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  initial={{ opacity: 0, y: "-50%", clipPath: "inset(-20% 100% -20% -20%)" }}
+                  animate={{ opacity: 1, y: "-50%", clipPath: "inset(-20% -20% -20% -20%)" }}
+                  exit={{ opacity: 0, y: "-50%", clipPath: "inset(-20% 100% -20% -20%)" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   className="logo-full-view"
                 >
-                  Tkaul
+                  Tushita Kaul
                 </motion.span>
               )}
             </AnimatePresence>

@@ -39,8 +39,6 @@
 }
 
 .skill-card:hover .skill-icon-wrapper {
-  background-color: var(--accent-tertiary);
-  color: var(--text-main);
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0px var(--border-dark);
 }

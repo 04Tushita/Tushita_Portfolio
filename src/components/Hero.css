@@ -128,8 +128,8 @@
 
 .hero-image-container {
   position: relative;
-  width: 380px;
-  height: 460px;
+  width: 310px;
+  height: 380px;
 }
 
 .hero-memoji-card {
@@ -307,8 +307,8 @@
     -webkit-text-stroke: 1px var(--accent-primary);
   }
   .hero-image-container {
-    width: 290px;
-    height: 350px;
+    width: 250px;
+    height: 310px;
   }
   .hero-circle-btn {
     width: 48px;

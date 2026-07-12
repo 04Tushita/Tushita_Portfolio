@@ -76,13 +76,13 @@ const About = () => {
               viewport={{ once: true }}
             >
               <motion.p className="about-text" variants={itemVariants}>
-                Hello there! I'm Tushita Kaul, a UI/UX Designer, with a passion for solving critical problems and as well as creating functional and user-centric digital experiernces. Having pursued my bachelor's in Computer Science with a specialization in AI, I have developed a liking towards it and the exciting advancements it brings to the world. My interest in the realms of both AI and UI/UX designing makes me want to explore that how can they be bought together and hence use AI in designing.To enhance my skills, I am currently pursuing my Masters in Graphic and Experience Design at North Carolina State University.
+                Hello there! I'm Tushita Kaul, a UI/UX Designer with a passion for solving critical problems and creating functional, user-centric digital experiences. I am currently pursuing my Masters in Graphic and Experience Design at North Carolina State University to further refine my craft.
               </motion.p>
               <motion.p className="about-text" variants={itemVariants}>
-                Throughout my academic journey, I've gained a strong foundation in software development, algorithms, and data structures. I actively engage in projects applying AI techniques to real-world problems. This experience sharpens my programming skills and nurtures my curiosity for tackling complex challenges. I have also undergone various online courses to develop my coding and designing skills as well. Such online course platforms helped me to learn new concepts and apply them in my projects.
+                With a Bachelor's in Computer Science specializing in AI, I have a strong foundation in software development. My unique background allows me to bridge the gap between design and technology, and I'm deeply interested in exploring how AI can be leveraged within UI/UX design to create smarter, more intuitive interfaces.
               </motion.p>
               <motion.p className="about-text" variants={itemVariants}>
-                Beyond academics, music is my inspiration and hobby. Singing teaches me discipline, perseverance, and the value of collaboration, qualities I apply to my work.
+                Beyond academics, music is my greatest inspiration. Singing teaches me discipline, perseverance, and the value of collaboration—qualities I apply directly to my design process.
               </motion.p>
             </motion.div>
           </div>

@@ -1,13 +1,3 @@
-import {
-  Figma,
-  PenTool,
-  Layout,
-  Code2,
-  MonitorSmartphone,
-  Smartphone,
-  Palette,
-  Eye
-} from 'lucide-react';
 
 export const projects = [
   {
@@ -99,12 +89,14 @@ export const experience = [
 ];
 
 export const skills = [
-  { name: "Figma", icon: Figma, category: "Design" },
-  { name: "Adobe XD", icon: Layout, category: "Design" },
-  { name: "Prototyping", icon: Smartphone, category: "Design" },
-  { name: "UI Design", icon: Palette, category: "Design" },
-  { name: "UX Research", icon: Eye, category: "Research" },
-  { name: "Wireframing", icon: PenTool, category: "Design" },
-  { name: "HTML/CSS", icon: Code2, category: "Development" },
-  { name: "React.js", icon: MonitorSmartphone, category: "Development" }
+  { name: "Figma", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "Design" },
+  { name: "Adobe XD", logoUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg", category: "Design" },
+  { name: "Illustrator", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg", category: "Design" },
+  { name: "Framer", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framer/framer-original.svg", category: "Design" },
+  { name: "Webflow", logoUrl: "https://cdn.simpleicons.org/webflow/4353FF", category: "Design" },
+  { name: "Miro", logoUrl: "https://cdn.simpleicons.org/miro/050038", category: "Research" },
+  { name: "Notion", logoUrl: "https://cdn.simpleicons.org/notion/000000", category: "Research" },
+  { name: "HTML5", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", category: "Development" },
+  { name: "CSS3", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", category: "Development" },
+  { name: "React.js", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", category: "Development" }
 ];

@@ -48,7 +48,6 @@ const Skills = () => {
             viewport={{ once: true, margin: "-50px" }}
           >
             {skills.map((skill, index) => {
-              const Icon = skill.icon;
               return (
                 <motion.div 
                   key={index} 
@@ -56,7 +55,7 @@ const Skills = () => {
                   variants={itemVariants}
                 >
                   <div className="skill-icon-wrapper">
-                    <Icon size={26} className="skill-icon" />
+                    <img src={skill.logoUrl} alt={`${skill.name} logo`} style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
                   </div>
                   <h4 className="skill-name">{skill.name}</h4>
                   <span className="skill-category">{skill.category}</span>
