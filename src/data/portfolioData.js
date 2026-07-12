@@ -92,9 +92,9 @@ export const experience = [
 export const skills = [
   { name: "Figma", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "Design" },
   { name: "Adobe XD", logoUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg", category: "Design" },
-  { name: "Illustrator", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg", category: "Design" },
-  { name: "Framer", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framer/framer-original.svg", category: "Design" },
-  { name: "Webflow", logoUrl: "https://cdn.simpleicons.org/webflow/4353FF", category: "Design" },
+  { name: "Adobe After Effects", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg", category: "Design" },
+  { name: "Java", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", category: "Code" },
+  { name: "Spline", logoUrl: "https://cdn.brandfetch.io/spline.design/w/400/h/400", category: "Design" },
   { name: "Miro", logoUrl: "https://cdn.simpleicons.org/miro/050038", category: "Research" },
   { name: "Notion", logoUrl: "https://cdn.simpleicons.org/notion/000000", category: "Research" },
   { name: "HTML5", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", category: "Development" },
