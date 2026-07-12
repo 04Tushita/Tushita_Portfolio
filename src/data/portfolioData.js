@@ -1,5 +1,5 @@
-
 import IntroVideo from '../assets/projects/merlin/Videos/Intro_video.mov';
+import pro2Video from '../Project2/Butterfly project/Videos/pro2.mp4';
 
 export const projects = [
   {
@@ -22,19 +22,21 @@ export const projects = [
     ]
   },
   {
-    id: "fintech-dashboard",
-    title: "Aura Fintech Dashboard",
-    shortDescription: "A modern, high-end web dashboard for personal finance management with data visualization.",
-    tags: ["Web Design", "Dashboard", "FinTech"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    role: "UI/UX Designer",
-    duration: "Aug 2023 - Dec 2023",
-    problem: "Personal finance tools are often cluttered with complex charts that intimidate everyday users.",
-    solution: "Aura breaks down financial data into easily digestible, interactive visual components using a clean, glassmorphic design system.",
+    id: "butterfly-project",
+    title: "Reviving the Silent Wings",
+    subtitle: "Transforming Preserved Butterfly Specimens into an Immersive Conservation Experience",
+    shortDescription: "Transforming Preserved Butterfly Specimens into an Immersive Conservation Experience",
+    tags: ["Studio Project", "Immersive Experience Design", "Interactive Museum Experience"],
+    image: pro2Video,
+    role: "Research • UI Design • 3D Design",
+    duration: "September 2025 – December 2025",
+    problem: "Museums rely on static displays and labels that visitors glance at briefly. Preserved specimens fail to engage visitors or prompt deep reflection on butterfly conservation.",
+    solution: "An immersive spatial experience combining projection mapping, gesture interaction, motion tracking, and interactive digital interfaces.",
     features: [
-      "Customizable widgets for tracking expenses and goals.",
-      "Interactive data visualizations with Framer Motion.",
-      "Smart categorization of transactions using ML."
+      "Digital specimen augmentation",
+      "Large-scale projection mapping",
+      "Motion-responsive floor projections",
+      "Interactive scientific overlays"
     ]
   },
   {
