@@ -139,12 +139,6 @@
   color: var(--accent-primary);
 }
 
-/* Deco Star Tweaks */
-.proj-star-1 {
-  font-size: 1.6rem;
-  animation-delay: 3.5s;
-}
-
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

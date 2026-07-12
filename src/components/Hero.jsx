@@ -38,10 +38,6 @@ const Hero = () => {
 
   return (
     <section className="hero" id="home">
-      {/* Decorative Floating Stars (Ref 1) */}
-      <div className="star-deco hero-star-1" style={{ top: '15%', left: '4%' }}>★</div>
-      <div className="star-deco hero-star-2" style={{ top: '15%', right: '15%', color: 'var(--accent-primary)' }}>★</div>
-      <div className="star-deco hero-star-3" style={{ bottom: '25%', left: '45%' }}>★</div>
 
       <div className="container hero-container">
         {/* Left Column: Title & Text */}

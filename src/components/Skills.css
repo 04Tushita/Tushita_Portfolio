@@ -63,12 +63,6 @@
   color: var(--accent-primary);
 }
 
-/* Deco Star Tweaks */
-.skills-star-1 {
-  font-size: 1.6rem;
-  animation-delay: 2.5s;
-}
-
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));

@@ -48,8 +48,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  height: 54px;
-  min-width: 170px;
+  height: 44px;
+  min-width: 140px;
   user-select: none;
 }
 
@@ -60,11 +60,11 @@
   top: 50%;
   transform: translateY(-50%);
   /* Visually shift badge UP */
-  margin-top: -16px;
+  margin-top: -13px;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
 }
 
 .logo-badge-circle {
@@ -73,7 +73,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--text-main);
+  background-color: var(--accent-primary);
   border-radius: 50%;
   z-index: 1;
 }
@@ -82,7 +82,7 @@
   position: relative;
   z-index: 2;
   font-family: 'Mr De Haviland', cursive;
-  font-size: 4.2rem;
+  font-size: 3.4rem;
   color: var(--bg-main);
   line-height: 1;
   /* Shift to visually center and add a tiny stroke to make the thin cursive pop */
@@ -97,12 +97,12 @@
   top: 50%;
   transform: translateY(-50%);
   /* Visually shift signature DOWN */
-  margin-top: 6px;
+  margin-top: 5px;
   font-family: 'Mr De Haviland', cursive;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 400;
-  color: var(--text-main); /* Keep consistent with badge color */
-  -webkit-text-stroke: 0.5px var(--text-main); 
+  color: var(--accent-primary); /* Keep consistent with badge color */
+  -webkit-text-stroke: 0.5px var(--accent-primary); 
   text-shadow: none;
   line-height: 1;
   white-space: nowrap;

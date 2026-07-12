@@ -87,8 +87,6 @@ const Contact = () => {
       <SectionDivider type="scoop" bgFill="var(--bg-main)" colorFill="var(--bg-secondary)" />
 
       <section className="section contact-section bg-peach" id="contact">
-        {/* Floating background star */}
-        <div className="star-deco cont-star-1" style={{ top: '8%', left: '10%' }}>★</div>
 
         <div className="container">
           <motion.h2 

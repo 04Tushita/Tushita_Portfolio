@@ -199,20 +199,6 @@
   color: var(--text-main);
 }
 
-/* Star position tweaks */
-.hero-star-1 {
-  font-size: 1.8rem;
-  animation-delay: 1s;
-}
-.hero-star-2 {
-  font-size: 1.4rem;
-  animation-delay: 3s;
-}
-.hero-star-3 {
-  font-size: 1.6rem;
-  animation-delay: 5s;
-}
-
 /* Continuous Scrolling Ticker (Ref 2 bottom) */
 .hero-ticker-wrapper {
   width: 100vw;

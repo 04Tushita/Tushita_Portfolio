@@ -12,8 +12,6 @@ const ExperienceTimeline = () => {
       <SectionDivider type="wave" bgFill="var(--bg-secondary)" colorFill="var(--bg-main)" />
 
       <section className="section experience-section bg-cream" id="experience">
-        {/* Floating background star */}
-        <div className="star-deco exp-star-1" style={{ top: '8%', left: '15%' }}>★</div>
 
         <div className="container">
           <motion.h2 

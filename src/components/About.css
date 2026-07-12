@@ -141,16 +141,6 @@
   color: var(--text-muted);
 }
 
-/* Deco Star Tweaks */
-.about-star-1 {
-  animation-delay: 2s;
-  font-size: 1.6rem;
-}
-.about-star-2 {
-  animation-delay: 4s;
-  font-size: 1.4rem;
-}
-
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;

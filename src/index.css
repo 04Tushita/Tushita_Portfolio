@@ -9,10 +9,10 @@
   --text-main: #2D2C2A;     /* Deep Espresso/Charcoal */
   --text-muted: #73706B;    /* Earthy Gray */
   
-  --accent-primary: #D26952;   /* Terracotta / Rust */
+  --accent-primary: #B3503D;   /* Darker Terracotta / Rust */
   --accent-secondary: #E3A06E; /* Warm Ochre / Sand */
   --accent-tertiary: #A64D3A;  /* Deep Terracotta */
-  --accent-gradient: linear-gradient(135deg, #D26952 0%, #E3A06E 100%);
+  --accent-gradient: linear-gradient(135deg, #B3503D 0%, #E3A06E 100%);
   
   /* Borders and Shadows */
   --border-color: rgba(45, 44, 42, 0.08);
@@ -182,21 +182,6 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-secondary);
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--border-dark);
-}
-
-/* Floating Stars decoration (Ref 1) */
-.star-deco {
-  color: var(--accent-tertiary);
-  font-size: 1.5rem;
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
-  animation: spin-slow 15s linear infinite;
-}
-
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* Scrollbar styling */

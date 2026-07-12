@@ -24,8 +24,6 @@ const Skills = () => {
       <SectionDivider type="scoop" bgFill="var(--bg-main)" colorFill="var(--bg-secondary)" />
 
       <section className="section skills-section bg-peach" id="skills">
-        {/* Floating background star */}
-        <div className="star-deco skills-star-1" style={{ top: '12%', right: '18%' }}>★</div>
 
         <div className="container">
           <motion.h2 

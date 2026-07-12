@@ -13,8 +13,6 @@ const Projects = () => {
       <SectionDivider type="wave" bgFill="var(--bg-secondary)" colorFill="var(--bg-main)" />
 
       <section className="section projects-section bg-cream" id="projects">
-        {/* Floating background star */}
-        <div className="star-deco proj-star-1" style={{ bottom: '15%', right: '10%' }}>★</div>
 
         <div className="container">
           <motion.h2 

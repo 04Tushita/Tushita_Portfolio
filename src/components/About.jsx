@@ -23,9 +23,6 @@ const About = () => {
       <SectionDivider type="scoop" bgFill="var(--bg-main)" colorFill="var(--bg-secondary)" />
 
       <section className="section about bg-peach" id="about">
-        {/* Floating Star Decors */}
-        <div className="star-deco about-star-1" style={{ top: '10%', right: '12%' }}>★</div>
-        <div className="star-deco about-star-2" style={{ bottom: '8%', left: '8%', color: 'var(--accent-secondary)' }}>★</div>
 
         <div className="container">
           <motion.h2
