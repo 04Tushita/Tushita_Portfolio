@@ -109,10 +109,10 @@ const Hero = () => {
 
             {/* Overlapping circular action buttons (Ref 2) */}
             <div className="hero-floating-actions">
-              <a href="#contact" className="hero-circle-btn btn-dark" aria-label="Send Email">
+              <a href="mailto:tushitakaul04@gmail.com" className="hero-circle-btn btn-dark" aria-label="Send Email">
                 <Mail size={22} />
               </a>
-              <a href="#about" className="hero-circle-btn btn-dark" aria-label="View Resume/Info">
+              <a href="https://drive.google.com/file/d/1vhreGv1FomimCEWrwvKZPIEP8FFatQdM/view?usp=sharing" target="_blank" className="hero-circle-btn btn-dark" aria-label="View Resume/Info">
                 <FileText size={22} />
               </a>
               <a href="#projects" onClick={handleScrollToProjects} className="hero-circle-btn btn-orange" aria-label="View Projects">

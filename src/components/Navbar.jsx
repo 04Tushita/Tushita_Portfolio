@@ -21,9 +21,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '#about' },
-    { name: 'Experience', path: '#experience' },
-    { name: 'Skills', path: '#skills' },
+    // { name: 'Experience', path: '#experience' },
+    // { name: 'Skills', path: '#skills' },
     { name: 'Projects', path: '#projects' },
+    { name: 'Resume', path: 'https://drive.google.com/file/d/1vhreGv1FomimCEWrwvKZPIEP8FFatQdM/view?usp=sharing' },
     { name: 'Contact', path: '#contact' },
   ];
 
@@ -99,6 +100,8 @@ const Navbar = () => {
               key={link.name}
               href={link.path}
               className="nav-link"
+              target={link.path.startsWith('http') ? "_blank" : undefined}
+              rel={link.path.startsWith('http') ? "noopener noreferrer" : undefined}
               onClick={(e) => handleNavClick(e, link.path)}
             >
               {link.name}
@@ -124,6 +127,8 @@ const Navbar = () => {
               key={link.name}
               href={link.path}
               className="mobile-nav-link"
+              target={link.path.startsWith('http') ? "_blank" : undefined}
+              rel={link.path.startsWith('http') ? "noopener noreferrer" : undefined}
               onClick={(e) => handleNavClick(e, link.path)}
             >
               {link.name}

@@ -39,7 +39,7 @@ const Skills = () => {
           </p>
 
           <motion.div 
-            className="skills-grid"
+            className="skills-pill-container"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -49,14 +49,16 @@ const Skills = () => {
               return (
                 <motion.div 
                   key={index} 
-                  className="skill-card organic-card"
+                  className="skill-pill glass-pill"
                   variants={itemVariants}
                 >
-                  <div className="skill-icon-wrapper">
-                    <img src={skill.logoUrl} alt={`${skill.name} logo`} style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
+                  <div className="skill-pill-icon">
+                    <img src={skill.logoUrl} alt={`${skill.name} logo`} />
                   </div>
-                  <h4 className="skill-name">{skill.name}</h4>
-                  <span className="skill-category">{skill.category}</span>
+                  <div className="skill-pill-text">
+                    <h4 className="skill-pill-name">{skill.name}</h4>
+                    <span className="skill-pill-category">{skill.category}</span>
+                  </div>
                 </motion.div>
               );
             })}
