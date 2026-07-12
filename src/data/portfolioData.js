@@ -56,24 +56,24 @@ export const projects = [
 export const experience = [
   {
     id: 1,
-    type: 'work',
-    title: "Lead Social Media Content Creator for MGXD Departementr",
-    company: "North Carolina State University",
-    duration: "Sep' 2025  - Apr' 2026",
-  },
-  {
-    id: 2,
     type: 'education',
     title: "Master's in Graphic & Experience Design",
     company: "North Carolina State University",
     duration: "Aug' 2025 - Present",
+  },
+  {
+    id: 2,
+    type: 'work',
+    title: "Lead Social Media Content Creator for MGXD Department",
+    company: "North Carolina State University",
+    duration: "Sep' 2025  - Apr' 2026",
 
     ///description: "Designed responsive websites and mobile applications for diverse clients. Conducted user research, wireframing, and interactive prototyping."
   },
   {
     id: 3,
     type: 'work',
-    title: "Associate Software Engineerr",
+    title: "Associate Software Engineer",
     company: "Tech Mahindra",
     duration: "Dec' 2024 - May' 2025",
     //description: "Focused on user-centered design, cognitive psychology, and the integration of AI in user interfaces."
