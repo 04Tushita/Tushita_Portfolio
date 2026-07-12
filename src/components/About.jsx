@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionDivider from './SectionDivider';
 import './About.css';
-import aboutImg from '../assets/tushita_about.jpg';
+import aboutImg from '../assets/image-copy.png';
 
 const About = () => {
   const containerVariants = {
@@ -58,9 +58,6 @@ const About = () => {
                     alt="Tushita Kaul"
                     className="about-img"
                   />
-                  <div className="polaroid-caption italic-serif">
-                    me in my creative zone ✨
-                  </div>
                 </div>
               </div>
             </motion.div>

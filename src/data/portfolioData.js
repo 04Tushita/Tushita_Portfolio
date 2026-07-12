@@ -61,33 +61,32 @@ export const experience = [
   {
     id: 1,
     type: 'education',
-    title: "Master's in Graphic & Experience Design",
-    company: "North Carolina State University",
-    duration: "Aug' 2025 - Present",
+    title: "Bachelor of Technology in Computer Science with Specialization in AI & ML",
+    company: "Vellore Institute of Technology, Bhopal",
+    duration: "Jul' 2020 - May' 2024",
   },
   {
     id: 2,
     type: 'work',
-    title: "Lead Social Media Content Creator for MGXD Department",
-    company: "North Carolina State University",
-    duration: "Sep' 2025  - Apr' 2026",
-
+    title: "Associate Software Engineer",
+    company: "Tech Mahindra",
+    duration: "Dec' 2024 - May' 2025"
     ///description: "Designed responsive websites and mobile applications for diverse clients. Conducted user research, wireframing, and interactive prototyping."
   },
   {
     id: 3,
     type: 'work',
-    title: "Associate Software Engineer",
-    company: "Tech Mahindra",
-    duration: "Dec' 2024 - May' 2025",
+    title: "Lead Social Media Content Creator for MGXD Department",
+    company: "North Carolina State University",
+    duration: "Sep' 2025  - Apr' 2026",
     //description: "Focused on user-centered design, cognitive psychology, and the integration of AI in user interfaces."
   },
   {
     id: 4,
     type: 'education',
-    title: "Bachelor of Technology in Computer Science with Specialization in AI & ML",
-    company: "Vellore Institute of Technology, Bhopal",
-    duration: "Jul' 2020 - May' 2024",
+    title: "Master's in Graphic & Experience Design",
+    company: "North Carolina State University",
+    duration: "Aug' 2025 - Present",
     //description: "Developed strong foundational skills in visual design, typography, and color theory."
   }
 ];
@@ -95,9 +94,9 @@ export const experience = [
 export const skills = [
   { name: "Figma", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "Design" },
   { name: "Adobe XD", logoUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg", category: "Design" },
-  { name: "Illustrator", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg", category: "Design" },
-  { name: "Framer", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framer/framer-original.svg", category: "Design" },
-  { name: "Webflow", logoUrl: "https://cdn.simpleicons.org/webflow/4353FF", category: "Design" },
+  { name: "Adobe After Effects", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg", category: "Design" },
+  { name: "Java", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", category: "Code" },
+  { name: "Spline", logoUrl: "https://cdn.brandfetch.io/spline.design/w/400/h/400", category: "Design" },
   { name: "Miro", logoUrl: "https://cdn.simpleicons.org/miro/050038", category: "Research" },
   { name: "Notion", logoUrl: "https://cdn.simpleicons.org/notion/000000", category: "Research" },
   { name: "HTML5", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", category: "Development" },

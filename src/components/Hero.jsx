@@ -109,13 +109,13 @@ const Hero = () => {
 
             {/* Overlapping circular action buttons (Ref 2) */}
             <div className="hero-floating-actions">
-              <a href="#contact" className="hero-circle-btn btn-dark" aria-label="Send Email">
+              <a href="mailto:tushitakaul04@gmail.com" className="hero-circle-btn btn-dark" aria-label="Send Email" data-tooltip="Mail">
                 <Mail size={22} />
               </a>
-              <a href="#about" className="hero-circle-btn btn-dark" aria-label="View Resume/Info">
+              <a href="https://drive.google.com/file/d/1vhreGv1FomimCEWrwvKZPIEP8FFatQdM/view?usp=sharing" target="_blank" className="hero-circle-btn btn-dark" aria-label="View Resume/Info" data-tooltip="Resume">
                 <FileText size={22} />
               </a>
-              <a href="#projects" onClick={handleScrollToProjects} className="hero-circle-btn btn-orange" aria-label="View Projects">
+              <a href="#projects" onClick={handleScrollToProjects} className="hero-circle-btn btn-orange" aria-label="View Projects" data-tooltip="Projects">
                 <ArrowUpRight size={26} />
               </a>
             </div>
@@ -126,10 +126,10 @@ const Hero = () => {
       {/* Full-width continuous scrolling ticker (Ref 2 bottom) */}
       <div className="hero-ticker-wrapper">
         <div className="hero-ticker-content">
-          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
-          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
-          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
-          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIVE TIMELINES &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIONS &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIONS &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIONS &nbsp;▪&nbsp;&nbsp;</span>
+          <span>UI/UX DESIGN &nbsp;▪&nbsp; WIREFRAMING &nbsp;▪&nbsp; PROTOTYPING &nbsp;▪&nbsp; USER RESEARCH &nbsp;▪&nbsp; INTERACTIONS &nbsp;▪&nbsp;&nbsp;</span>
         </div>
       </div>
     </section>
