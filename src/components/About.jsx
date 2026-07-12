@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionDivider from './SectionDivider';
 import './About.css';
+import aboutImg from '../assets/tushita_about.jpg';
 
 const About = () => {
   const containerVariants = {
@@ -53,7 +54,7 @@ const About = () => {
                 {/* White Polaroid frame */}
                 <div className="about-img-wrapper">
                   <img
-                    src="/tushita_about.jpg"
+                    src={aboutImg}
                     alt="Tushita Kaul"
                     className="about-img"
                   />

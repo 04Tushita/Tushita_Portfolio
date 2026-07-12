@@ -12,6 +12,19 @@ import {
 } from 'lucide-react';
 import './MerlinDetail.css';
 
+import gifNode from '../assets/projects/merlin/gifs/node.gif';
+import gifCustomer from '../assets/projects/merlin/gifs/customer.gif';
+import gifHighlight from '../assets/projects/merlin/gifs/highlight.gif';
+import gifMulti from '../assets/projects/merlin/gifs/multi.gif';
+import gifChecklist from '../assets/projects/merlin/gifs/checklist.gif';
+
+import imgInterview from '../assets/projects/merlin/Pics/interview.png';
+import imgUserJourney from '../assets/projects/merlin/Pics/user_journey_map.png';
+import imgInitial from '../assets/projects/merlin/Pics/initial.png';
+import imgConcepts from '../assets/projects/merlin/Pics/concepts.png';
+import imgFinal from '../assets/projects/merlin/Pics/final.png';
+import imgWorkflow from '../assets/projects/merlin/Pics/workflow.png';
+
 const MerlinDetail = ({ project }) => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
@@ -22,31 +35,31 @@ const MerlinDetail = ({ project }) => {
     {
       id: 0,
       title: "Node-Based Traceability",
-      gif: "/projects/merlin/gifs/node.gif",
+      gif: gifNode,
       description: "Aisha can view a full node map of each report, showing its history of revisions and external decisions across tiers. The nodes also connect related reports and preserve AI-human interactions, giving Aisha full transparency into how decisions and edits were made."
     },
     {
       id: 1,
       title: "Customer Group Management",
-      gif: "/projects/merlin/gifs/customer.gif",
+      gif: gifCustomer,
       description: "Aisha can review, approve, or edit based on customer distribution groups directly within the report view. She can approve expansion requests instantly or route them to a senior authority, ensuring flexible yet policy-compliant dissemination control."
     },
     {
       id: 2,
       title: "Cross-Tier Highlight Synchronization",
-      gif: "/projects/merlin/gifs/highlight.gif",
+      gif: gifHighlight,
       description: "When Aisha highlights content in one tier, the system automatically reflects corresponding changes across all opened tiers. She can also query the AI to compare relevant sections, and add annotations that route back to other analysts."
     },
     {
       id: 3,
       title: "Multi-tier Viewing",
-      gif: "/projects/merlin/gifs/multi.gif",
+      gif: gifMulti,
       description: "While reviewing a report, Aisha is able to pull up to five tiers beside each other to run comparisons with the AI."
     },
     {
       id: 4,
       title: "Release Checklist",
-      gif: "/projects/merlin/gifs/checklist.gif",
+      gif: gifChecklist,
       description: "Before releasing a report, Aisha gets a consolidated checklist of all completed requirements. It highlights key confirmations like classification, source protection, and tier approvals in one place for quick validation. This checklist is also accessible anytime through the expanded report view to support ongoing release readiness."
     }
   ];
@@ -293,7 +306,7 @@ const MerlinDetail = ({ project }) => {
 
           <div className="section-image-container mt-8">
             <img 
-              src="/projects/merlin/Pics/interview.png" 
+              src={imgInterview} 
               alt="Interview Insights" 
               className="merlin-inline-img" 
             />
@@ -309,7 +322,7 @@ const MerlinDetail = ({ project }) => {
 
           <div className="section-image-container mt-6">
             <img 
-              src="/projects/merlin/Pics/user_journey_map.png" 
+              src={imgUserJourney} 
               alt="User Journey Map" 
               className="merlin-inline-img" 
             />
@@ -356,15 +369,15 @@ const MerlinDetail = ({ project }) => {
           <div className="critique-comparison-container mt-8">
             <div className="comparison-images-grid">
               <div className="comparison-image-item">
-                <img src="/projects/merlin/Pics/initial.png" alt="Initial screens" />
+                <img src={imgInitial} alt="Initial screens" />
                 <span>Initial Idea Sketches</span>
               </div>
               <div className="comparison-image-item">
-                <img src="/projects/merlin/Pics/concepts.png" alt="Concept Sketch" />
+                <img src={imgConcepts} alt="Concept Sketch" />
                 <span>Concepts Sketches</span>
               </div>
               <div className="comparison-image-item">
-                <img src="/projects/merlin/Pics/final.png" alt="Final Screens" />
+                <img src={imgFinal} alt="Final Screens" />
                 <span>Final Variation Sketches</span>
               </div>
             </div>
@@ -389,7 +402,7 @@ const MerlinDetail = ({ project }) => {
 
           <div className="section-image-container mt-8">
             <img 
-              src="/projects/merlin/Pics/workflow.png" 
+              src={imgWorkflow} 
               alt="Workflow Process Diagram" 
               className="merlin-inline-img" 
             />

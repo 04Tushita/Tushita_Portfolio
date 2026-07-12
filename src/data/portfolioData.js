@@ -1,4 +1,6 @@
 
+import IntroVideo from '../assets/projects/merlin/Videos/Intro_video.mov';
+
 export const projects = [
   {
     id: "merlin",
@@ -6,7 +8,7 @@ export const projects = [
     subtitle: "An AI-Assisted Workspace for Tiered Intelligence Reporting",
     shortDescription: "An AI-Assisted Workspace for Tiered Intelligence Reporting",
     tags: ["Studio Project", "Enterprise UX", "Human-AI Collaboration"],
-    image: "/projects/merlin/Videos/Intro_video.mov",
+    image: IntroVideo,
     role: "UX Research • UX Design • UI Design",
     duration: "February 2026 – April 2026",
     problem: "Intelligence analysts work in environments where every reporting decision has operational consequences. A single report may need to be rewritten multiple times for different audiences, each with its own security clearance, mission requirements, and level of technical detail.",
