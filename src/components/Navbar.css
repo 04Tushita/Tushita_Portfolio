@@ -48,42 +48,46 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  height: 40px;
-  min-width: 130px; /* Keeps layout from shifting when full name is shown */
+  height: 54px;
+  min-width: 170px;
   user-select: none;
 }
 
 .logo-initials-view {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 38px;
+  /* Visually shift badge UP */
+  margin-top: -16px;
+  align-items: center;
   justify-content: center;
+  width: 54px;
+  height: 54px;
 }
 
-.char-t {
-  font-family: var(--font-heading); /* Playfair Display - elegant serif */
-  font-size: 1.85rem;
-  font-weight: 900;
-  font-style: italic;
-  color: var(--text-main);
-  line-height: 0.7;
-  z-index: 2;
-}
-
-.char-k {
-  font-family: var(--font-body); /* Plus Jakarta Sans - geometric sans-serif */
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--accent-primary); /* Terracotta highlight */
-  line-height: 0.7;
-  margin-top: -0.25rem; /* Overlap slightly with T vertically */
-  margin-left: 0.5rem; /* Shift K to the right under T */
+.logo-badge-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-main);
+  border-radius: 50%;
   z-index: 1;
+}
+
+.logo-cursive-tk {
+  position: relative;
+  z-index: 2;
+  font-family: 'Mr De Haviland', cursive;
+  font-size: 4.2rem;
+  color: var(--bg-main);
+  line-height: 1;
+  /* Shift to visually center and add a tiny stroke to make the thin cursive pop */
+  transform: translate(2px, -2px);
+  -webkit-text-stroke: 0.4px var(--bg-main);
 }
 
 /* The signature full name view */
@@ -92,12 +96,14 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  /* Visually shift signature DOWN */
+  margin-top: 6px;
   font-family: 'Mr De Haviland', cursive;
   font-size: 2.8rem;
   font-weight: 400;
-  color: var(--accent-primary); /* Terracotta */
-  -webkit-text-stroke: 0.6px var(--accent-primary); /* Bold script look */
-  text-shadow: 0 0 1px rgba(210, 105, 82, 0.2);
+  color: var(--text-main); /* Keep consistent with badge color */
+  -webkit-text-stroke: 0.5px var(--text-main); 
+  text-shadow: none;
   line-height: 1;
   white-space: nowrap;
   transform-origin: left center;

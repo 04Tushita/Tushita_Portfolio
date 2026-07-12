@@ -64,14 +64,14 @@ const Navbar = () => {
               {!logoHovered && (
                 <motion.div 
                   key="initials"
-                  initial={{ opacity: 0, y: "-50%", scale: 0.95, filter: 'blur(2px)' }}
-                  animate={{ opacity: 1, y: "-50%", scale: 1, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, y: "-50%", scale: 0.95, filter: 'blur(2px)' }}
+                  initial={{ opacity: 0, scale: 0.95, filter: 'blur(2px)' }}
+                  animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, scale: 0.95, filter: 'blur(2px)' }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
                   className="logo-initials-view"
                 >
-                  <span className="char-t">T</span>
-                  <span className="char-k">K</span>
+                  <div className="logo-badge-circle"></div>
+                  <span className="logo-cursive-tk">Tk</span>
                 </motion.div>
               )}
             </AnimatePresence>
