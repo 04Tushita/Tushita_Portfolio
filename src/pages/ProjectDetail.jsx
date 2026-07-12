@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { projects } from '../data/portfolioData';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import './ProjectDetail.css';
+import MerlinDetail from './MerlinDetail';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -20,6 +21,10 @@ const ProjectDetail = () => {
         <Link to="/" className="btn btn-primary" style={{ marginTop: '2rem' }}>Return Home</Link>
       </div>
     );
+  }
+
+  if (project.id === 'merlin') {
+    return <MerlinDetail project={project} />;
   }
 
   return (

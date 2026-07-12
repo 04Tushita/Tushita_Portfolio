@@ -1,29 +1,22 @@
-import { 
-  Figma, 
-  PenTool, 
-  Layout, 
-  Code2, 
-  MonitorSmartphone,
-  Smartphone,
-  Palette,
-  Eye
-} from 'lucide-react';
 
 export const projects = [
   {
-    id: "health-app",
-    title: "VitalSync Healthcare App",
-    shortDescription: "An AI-powered patient monitoring mobile application focusing on accessibility and seamless UX.",
-    tags: ["UI/UX Design", "Mobile App", "HealthTech"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    role: "Lead Product Designer",
-    duration: "Jan 2024 - Apr 2024",
-    problem: "Patients often struggle to keep track of their vital signs and medication schedules, leading to decreased health outcomes and increased anxiety.",
-    solution: "VitalSync offers a simplified, calming interface that uses AI to predict health trends and gently remind users of their routines without overwhelming them.",
+    id: "merlin",
+    title: "Designing Merlin –",
+    subtitle: "An AI-Assisted Workspace for Tiered Intelligence Reporting",
+    shortDescription: "An AI-Assisted Workspace for Tiered Intelligence Reporting",
+    tags: ["Studio Project", "Enterprise UX", "Human-AI Collaboration"],
+    image: "/projects/merlin/Videos/Intro_video.mov",
+    role: "UX Research • UX Design • UI Design",
+    duration: "February 2026 – April 2026",
+    problem: "Intelligence analysts work in environments where every reporting decision has operational consequences. A single report may need to be rewritten multiple times for different audiences, each with its own security clearance, mission requirements, and level of technical detail.",
+    solution: "We designed Merlin – an AI-augmented workspace that combines a traditional document-based editor with a node-based relationship visualization, built in partnership with the Laboratory of Analytical Sciences (LAS).",
     features: [
-      "Intuitive daily dashboard with predictive health insights.",
-      "Accessible typography and high-contrast color modes.",
-      "Seamless integration with wearable health devices."
+      "Node-Based Traceability",
+      "Customer Group Management",
+      "Cross-Tier Highlight Synchronization",
+      "Multi-tier Viewing",
+      "Release Checklist"
     ]
   },
   {
@@ -63,45 +56,47 @@ export const projects = [
 export const experience = [
   {
     id: 1,
-    type: 'work',
-    title: "Senior Product Designer",
-    company: "TechNova Solutions",
-    duration: "2022 - Present",
-    description: "Leading the design of enterprise SaaS products. Integrated AI-driven features into the core user workflow, improving task efficiency by 40%."
+    type: 'education',
+    title: "Master's in Graphic & Experience Design",
+    company: "North Carolina State University",
+    duration: "Aug' 2025 - Present",
   },
   {
     id: 2,
     type: 'work',
-    title: "UI/UX Designer",
-    company: "Creative Pulse Agency",
-    duration: "2020 - 2022",
-    description: "Designed responsive websites and mobile applications for diverse clients. Conducted user research, wireframing, and interactive prototyping."
+    title: "Lead Social Media Content Creator for MGXD Department",
+    company: "North Carolina State University",
+    duration: "Sep' 2025  - Apr' 2026",
+
+    ///description: "Designed responsive websites and mobile applications for diverse clients. Conducted user research, wireframing, and interactive prototyping."
   },
   {
     id: 3,
-    type: 'education',
-    title: "Master's in Human-Computer Interaction",
-    company: "Design Institute of Technology",
-    duration: "2018 - 2020",
-    description: "Focused on user-centered design, cognitive psychology, and the integration of AI in user interfaces."
+    type: 'work',
+    title: "Associate Software Engineer",
+    company: "Tech Mahindra",
+    duration: "Dec' 2024 - May' 2025",
+    //description: "Focused on user-centered design, cognitive psychology, and the integration of AI in user interfaces."
   },
   {
     id: 4,
     type: 'education',
-    title: "Bachelor of Fine Arts in Graphic Design",
-    company: "State University",
-    duration: "2014 - 2018",
-    description: "Developed strong foundational skills in visual design, typography, and color theory."
+    title: "Bachelor of Technology in Computer Science with Specialization in AI & ML",
+    company: "Vellore Institute of Technology, Bhopal",
+    duration: "Jul' 2020 - May' 2024",
+    //description: "Developed strong foundational skills in visual design, typography, and color theory."
   }
 ];
 
 export const skills = [
-  { name: "Figma", icon: Figma, category: "Design" },
-  { name: "Adobe XD", icon: Layout, category: "Design" },
-  { name: "Prototyping", icon: Smartphone, category: "Design" },
-  { name: "UI Design", icon: Palette, category: "Design" },
-  { name: "UX Research", icon: Eye, category: "Research" },
-  { name: "Wireframing", icon: PenTool, category: "Design" },
-  { name: "HTML/CSS", icon: Code2, category: "Development" },
-  { name: "React.js", icon: MonitorSmartphone, category: "Development" }
+  { name: "Figma", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "Design" },
+  { name: "Adobe XD", logoUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg", category: "Design" },
+  { name: "Illustrator", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg", category: "Design" },
+  { name: "Framer", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framer/framer-original.svg", category: "Design" },
+  { name: "Webflow", logoUrl: "https://cdn.simpleicons.org/webflow/4353FF", category: "Design" },
+  { name: "Miro", logoUrl: "https://cdn.simpleicons.org/miro/050038", category: "Research" },
+  { name: "Notion", logoUrl: "https://cdn.simpleicons.org/notion/000000", category: "Research" },
+  { name: "HTML5", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", category: "Development" },
+  { name: "CSS3", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", category: "Development" },
+  { name: "React.js", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", category: "Development" }
 ];

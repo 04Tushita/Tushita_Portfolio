@@ -65,7 +65,7 @@
   align-items: center;
   gap: 0.5rem;
   background: var(--accent-primary);
-  color: #ffffff;
+  color: var(--bg-main);
   border: 1.5px solid var(--border-dark);
   padding: 0.7rem 1.6rem;
   border-radius: 2rem;
@@ -137,12 +137,6 @@
 
 .text-accent {
   color: var(--accent-primary);
-}
-
-/* Deco Star Tweaks */
-.proj-star-1 {
-  font-size: 1.6rem;
-  animation-delay: 3.5s;
 }
 
 @media (max-width: 768px) {

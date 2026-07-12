@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap');
+
 .navbar {
   position: fixed;
   top: 0;
@@ -13,21 +15,19 @@
   box-shadow: 0 0 0 rgba(255, 165, 185, 0);
 }
 
-/* Translucent Rose Pink Glassmorphism Capsule on Scroll */
+/* Full-width Dark Glassmorphism on Scroll */
 .navbar.scrolled {
-  top: 1.25rem;
-  width: calc(100% - 3rem);
-  max-width: 1200px;
-  padding: 0.8rem 2.2rem;
-  background-color: rgba(255, 228, 233, 0.82); /* Premium soft rose-pink shade */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 
-    0 24px 50px -12px rgba(255, 165, 185, 0.45), 
-    0 8px 20px -8px rgba(255, 165, 185, 0.25),
-    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  top: 0;
+  width: 100%;
+  max-width: none;
+  padding: 1rem 2rem;
+  background-color: rgba(250, 249, 246, 0.85); /* Light oat background */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -36,51 +36,77 @@
   align-items: center;
 }
 
-/* Interlocking Monogram Logo */
+/* Logo Signature Badge */
 .logo {
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
 }
 
-.logo-monogram {
-  font-family: var(--font-heading); /* Playfair Display */
-  font-size: 2.3rem;
-  font-weight: 800;
-  font-style: italic;
+.logo-tk-interactive {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  line-height: 0.8;
+  justify-content: flex-start;
+  height: 44px;
+  min-width: 140px;
   user-select: none;
 }
 
-.logo-char {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.25s ease;
+.logo-initials-view {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Visually shift badge UP */
+  margin-top: -13px;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
 }
 
-.logo-char-t {
-  color: var(--text-main);
+.logo-badge-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.logo-cursive-tk {
   position: relative;
   z-index: 2;
-  margin-right: -0.45em; /* Interlocks K behind the crossbar and stem */
+  font-family: 'Mr De Haviland', cursive;
+  font-size: 3.4rem;
+  color: var(--bg-main);
+  line-height: 1;
+  /* Shift to visually center and add a tiny stroke to make the thin cursive pop */
+  transform: translate(2px, -2px);
+  -webkit-text-stroke: 0.4px var(--bg-main);
 }
 
-.logo-char-k {
-  color: var(--accent-primary); /* Terracotta highlight */
-  position: relative;
-  z-index: 1;
-  transform: translateY(2px) scale(0.92);
-}
-
-/* Monogram Hover Animation */
-.logo:hover .logo-char-t {
-  transform: translateX(1.5px);
-  color: var(--accent-secondary);
-}
-
-.logo:hover .logo-char-k {
-  transform: translateY(2px) scale(0.92) translateX(-2.5px);
+/* The signature full name view */
+.logo-full-view {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Visually shift signature DOWN */
+  margin-top: 5px;
+  font-family: 'Mr De Haviland', cursive;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--accent-primary); /* Keep consistent with badge color */
+  -webkit-text-stroke: 0.5px var(--accent-primary); 
+  text-shadow: none;
+  line-height: 1;
+  white-space: nowrap;
+  transform-origin: left center;
 }
 
 /* Nav Links */
@@ -93,14 +119,14 @@
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.98rem;
-  color: var(--text-muted);
+  color: var(--text-main);
   transition: color 0.25s ease;
   position: relative;
   text-decoration: none;
 }
 
 .nav-link:hover {
-  color: var(--text-main);
+  color: var(--accent-primary);
 }
 
 .nav-link::after {
@@ -110,7 +136,7 @@
   height: 2.2px;
   bottom: -4px;
   left: 0;
-  background: var(--accent-primary);
+  background: var(--accent-gradient);
   transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -139,12 +165,12 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-  background-color: rgba(255, 235, 239, 0.95); /* Soft rose backdrop */
+  background-color: rgba(250, 249, 246, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
-  box-shadow: 0 20px 40px -15px rgba(255, 180, 195, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-link {

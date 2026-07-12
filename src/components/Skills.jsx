@@ -24,8 +24,6 @@ const Skills = () => {
       <SectionDivider type="scoop" bgFill="var(--bg-main)" colorFill="var(--bg-secondary)" />
 
       <section className="section skills-section bg-peach" id="skills">
-        {/* Floating background star */}
-        <div className="star-deco skills-star-1" style={{ top: '12%', right: '18%' }}>★</div>
 
         <div className="container">
           <motion.h2 
@@ -48,7 +46,6 @@ const Skills = () => {
             viewport={{ once: true, margin: "-50px" }}
           >
             {skills.map((skill, index) => {
-              const Icon = skill.icon;
               return (
                 <motion.div 
                   key={index} 
@@ -56,7 +53,7 @@ const Skills = () => {
                   variants={itemVariants}
                 >
                   <div className="skill-icon-wrapper">
-                    <Icon size={26} className="skill-icon" />
+                    <img src={skill.logoUrl} alt={`${skill.name} logo`} style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
                   </div>
                   <h4 className="skill-name">{skill.name}</h4>
                   <span className="skill-category">{skill.category}</span>

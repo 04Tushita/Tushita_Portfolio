@@ -64,6 +64,11 @@
   background-color: var(--accent-tertiary);
 }
 
+.timeline-item:hover .timeline-icon .icon-work,
+.timeline-item:hover .timeline-icon .icon-education {
+  color: #FFFFFF;
+}
+
 .icon-work {
   color: var(--accent-primary);
 }
@@ -126,12 +131,6 @@
 
 .text-accent {
   color: var(--accent-primary);
-}
-
-/* Deco Star Tweaks */
-.exp-star-1 {
-  font-size: 1.5rem;
-  animation-delay: 1.5s;
 }
 
 @media (max-width: 768px) {

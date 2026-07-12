@@ -133,12 +133,6 @@
   color: var(--accent-primary);
 }
 
-/* Deco Star Tweaks */
-.cont-star-1 {
-  font-size: 1.6rem;
-  animation-delay: 4.5s;
-}
-
 @media (max-width: 992px) {
   .contact-container {
     flex-direction: column;

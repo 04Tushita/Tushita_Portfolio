@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -6,11 +8,9 @@
   position: relative;
   overflow: hidden;
   padding-top: 120px; /* Offset for navbar */
-  background-color: var(--bg-main);
+  background-color: transparent; /* rely on body background */
   background-image: 
-    radial-gradient(circle at 80% 20%, rgba(255, 240, 235, 0.8) 0%, transparent 60%),
-    radial-gradient(rgba(42, 36, 33, 0.18) 1.5px, transparent 1.5px);
-  background-size: 100% 100%, 24px 24px;
+    radial-gradient(circle at 80% 20%, rgba(210, 105, 82, 0.08) 0%, transparent 50%); /* Soft warm glow */
 }
 
 .hero-container {
@@ -29,36 +29,56 @@
   text-align: left;
 }
 
-.hero-intro-badge {
-  font-size: 1.8rem;
-  color: var(--accent-primary);
-  margin-bottom: 0.5rem;
-}
-
-.hero-title {
-  margin-bottom: 1.5rem;
-}
-
-.hero-stroke {
+.hero-greeting {
   display: block;
-  font-size: 6.5rem;
-  font-family: var(--font-body);
-  font-weight: 800;
-  -webkit-text-stroke: 2px var(--border-dark);
-  color: transparent;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-}
-
-.hero-filled {
-  display: block;
-  font-size: 5.5rem;
-  font-family: var(--font-heading);
-  font-weight: 800;
+  font-size: 2.2rem;
   color: var(--text-main);
+  margin-bottom: 0.3rem;
+}
+
+.hero-name-main {
+  display: block;
+  font-size: 5.6rem; /* Slightly larger scale for slender Cormorant font */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500; /* Sophisticated light weight */
+  font-style: italic; /* Flowing italic style to stand out */
+  color: var(--accent-primary); /* Terracotta */
   line-height: 1;
-  margin-top: 0.2rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+  font-size: 3.5rem;
+  font-family: var(--font-body); /* Plus Jakarta Sans */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 3.5rem; /* Increased margin since tag paragraph is removed */
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.dynamic-word-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Stroke effect for UI/UX word */
+  -webkit-text-stroke: 1.5px var(--accent-primary);
+  color: transparent;
+  min-width: 80px;
+}
+
+.dynamic-word {
+  display: inline-block;
+}
+
+.fixed-word {
+  color: var(--text-main);
 }
 
 .hero-tagline {
@@ -108,35 +128,28 @@
 
 .hero-image-container {
   position: relative;
-  width: 380px;
-  height: 460px;
+  width: 310px;
+  height: 380px;
 }
 
-.hero-blob-card {
+.hero-memoji-card {
   width: 100%;
   height: 100%;
-  background-color: #F9A88F; /* Coral/Peach backdrop */
-  border: 1.5px solid var(--border-dark);
-  border-radius: 60px 40px 100px 40px; /* Organic blob shape */
-  box-shadow: 6px 6px 0px var(--border-dark);
-  overflow: hidden;
+  background-color: transparent;
+  border-radius: 40px;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-blob-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0px var(--border-dark);
-}
-
-.hero-portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  /* filter: contrast(102%) saturate(98%); */
-  /* mix-blend-mode: multiply; */
-  /* opacity: 0.92; */
+.hero-memoji {
+  width: 110%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+  transform: translateZ(30px);
 }
 
 .hero-floating-actions {
@@ -177,27 +190,13 @@
 }
 
 .btn-orange {
-  background-color: var(--accent-primary);
+  background: var(--accent-gradient);
   color: #ffffff;
 }
 
 .btn-orange:hover {
-  background-color: var(--accent-tertiary);
+  background: var(--accent-tertiary);
   color: var(--text-main);
-}
-
-/* Star position tweaks */
-.hero-star-1 {
-  font-size: 1.8rem;
-  animation-delay: 1s;
-}
-.hero-star-2 {
-  font-size: 1.4rem;
-  animation-delay: 3s;
-}
-.hero-star-3 {
-  font-size: 1.6rem;
-  animation-delay: 5s;
 }
 
 /* Continuous Scrolling Ticker (Ref 2 bottom) */
@@ -248,12 +247,18 @@
     align-items: center;
   }
   
-  .hero-stroke {
-    font-size: 5rem;
+  .hero-greeting {
+    font-size: 1.8rem;
   }
-  
-  .hero-filled {
-    font-size: 4rem;
+  .hero-name-main {
+    font-size: 4.6rem; /* Slightly larger for Cormorant */
+  }
+  .hero-subtitle {
+    font-size: 2.8rem;
+    justify-content: center;
+  }
+  .dynamic-word-container {
+    min-width: 65px;
   }
   
   .hero-tagline {
@@ -272,15 +277,24 @@
 }
 
 @media (max-width: 480px) {
-  .hero-stroke {
-    font-size: 4rem;
+  .hero-greeting {
+    font-size: 1.5rem;
   }
-  .hero-filled {
-    font-size: 3.2rem;
+  .hero-name-main {
+    font-size: 3.4rem; /* Slightly larger for Cormorant */
+    letter-spacing: -0.5px;
+  }
+  .hero-subtitle {
+    font-size: 2.2rem;
+    justify-content: center;
+  }
+  .dynamic-word-container {
+    min-width: 50px;
+    -webkit-text-stroke: 1px var(--accent-primary);
   }
   .hero-image-container {
-    width: 290px;
-    height: 350px;
+    width: 250px;
+    height: 310px;
   }
   .hero-circle-btn {
     width: 48px;

@@ -1,0 +1,326 @@
+Cover Page
+
+IMAGE (Put in the file named “cover.png” here)
+
+
+
+Designing Merlin – (Heading, Project Title)
+
+An AI-Assisted Workspace for Tiered Intelligence Reporting - (Subheading)
+
+(Put these below the project heading and subheading inside three rounded rectangles)
+
+Studio Project 
+
+Enterprise UX 
+
+Human-AI Collaboration 
+
+
+
+Project Information (Put this information at the right side beside the project heading and subheading section with respective and relevant symbols for each)
+
+Role
+
+UX Research • UX Design • UI Design
+
+Team
+
+3 Designers
+
+Duration
+
+ February 2026 – April 2026
+
+Partner
+
+Laboratory of Analytical Sciences (LAS)
+
+Course
+
+MGXD Design Studio II
+
+Tools
+
+Figma, FigJam, Adobe After Effects , NotebookLM ,Adobe Illustrator
+
+
+
+
+
+Overview (Put this as the first section of the case study)
+
+Intelligence analysts work in environments where every reporting decision has operational consequences. A single report may need to be rewritten multiple times for different audiences, each with its own security clearance, mission requirements, and level of technical detail. This process, known as tiered reporting, requires analysts to preserve analytical intent while ensuring that sensitive information is appropriately sanitized before dissemination.
+
+Our studio partnered with the Laboratory of Analytical Sciences (LAS) to explore how AI could support this highly collaborative workflow without replacing human judgement. 
+
+Working in a team of three, we focused on the perspective of Aisha, a Senior Report Releaser responsible for making final dissemination decisions. Through extensive workflow analysis, interviews with intelligence analysts, iterative prototyping, and multiple rounds of expert feedback, we designed Merlin.
+
+
+
+The Challenge
+
+Research Question
+
+How might the design of an interface automate the tiered reporting process, so that reporter might more efficiently and knowledgeably team with AI to sanitize and deliver sensitive information across appropriate tiers?
+
+Problem Space
+
+Instead of redesigning the reporting workflow itself, our challenge was to design an interface that strengthened collaboration between analysts and AI while supporting three critical needs.
+
+
+
+USER PERSONA
+
+Meet Aisha – Senior Report Releaser (Do not add any person’s image here, just the text)
+
+Drawing on eight years of intelligence experience including three as a releaser, Aisha makes final determinations on report dissemination, ensuring proper classification and setting appropriate distribution channels. She excels under pressure while balancing security concerns against customer information needs.
+
+
+
+
+
+Interview Insights
+
+
+
+We conducted an interview with the reporter analysts, 
+
+GOAL: (Put the below three points inside rounded rectangle cards) Understand the responsibilities of a Senior Report Releaser. 
+
+ Identify workflow bottlenecks and repetitive tasks. 
+
+ Explore how AI could support, rather than replace, analyst decision-making.
+
+Key insights: (Put this section below the cards)
+
+Accuracy takes priority over speed - Analysts consistently emphasized that they would rather delay a report than release information they could not fully trust. 
+
+Revision tracking is highly manual - Comparing report versions often requires rereading entire documents to identify changes. 
+
+Policy knowledge is largely experience-based - Many release decisions depend on institutional memory rather than centralized guidance. 
+
+Coordination extends beyond the reporting tool - External approvals and communication frequently happen through email and phone calls, making progress difficult to track. 
+
+Analysts need foresight, not just notifications - Understanding what work is approaching their queue helps them plan and prioritize more effectively. 
+
+
+
+(Put the file named “interview.png” here)
+
+
+
+Mapping Aisha's Workflow:Before designing any interface concepts, we mapped her responsibilities throughout the reporting lifecycle to understand where she gathered information, where decisions were made, and where uncertainty entered the process.
+
+(After the above text put the file named “user_journey_map.png” here)The journey map helped us identify recurring pain points, emotional highs and lows, coordination challenges, and opportunities for AI-assisted support throughout Aisha's workflow. (This is the caption to be kept below the user journey map picture)
+
+
+
+Key Pain Points Considered: (Put this section as well in rounded rectangle cards)   
+
+Lacks Personalized Workspace
+
+Despite seeing team-wide workflows, senior releasers can’t efficiently prioritize tasks or customize report review queues.
+
+
+
+Analytical Drift Risk
+
+As intelligence is sanitized across tiers, senior releasers risk introducing subtle shifts in meaning that can affect downstream interpretation.
+
+
+
+Revision Visibility Gap
+
+Revised reports lack edit tracking, so senior reporters must often re-read full reports just to identify what has been changed or removed.
+
+
+
+
+
+
+
+
+
+Exploring Ideas:
+
+Here, we began exploring multiple interface concepts through rapid sketching. Rather than committing to a single solution, each team member independently generated concepts
+
+Designing Through Critique:
+
+Through classroom critiques and discussions with our instructor, we refined these ideas into clearer interaction patterns before translating them into mid-fidelity screens.
+
+What changed: (Put the below points in small cards)
+
+ Reduced visual clutter. 
+
+ Simplified navigation. 
+
+ Improved hierarchy. 
+
+ Reduced reading effort. 
+
+ Better grouped AI recommendations.
+
+(Put files named “initial.png”, “concept.png”, “final.png” here , showing all three images in a comparison manner)
+
+
+
+Refining the Workflow:
+
+As our understanding of Aisha's responsibilities evolved, we realized that her work extended across three distinct but interconnected activities. Rather than designing one large interface, we reorganized the workflow into focused segments that reflected how she actually approached report dissemination.
+
+(Put the below text in form of a flow chart)
+
+Customer Management
+
+↓
+
+Aisha’s understanding of  the Report
+
+↓
+
+Team’s understanding of Aisha’s Feedback
+
+
+
+(Put the file named “workflow.png” here)
+
+
+
+
+
+
+
+
+
+Bringing Ideas Back to the Experts:
+
+Rather than treating our first prototypes as finished solutions, we presented them to intelligence analysts for another round of evaluation. This session allowed us to validate whether our concepts aligned with real reporting practices and identify areas that required further refinement.
+
+One of the strongest themes from this feedback was the importance of reducing visual complexity. Analysts explained that their work already involved extensive reading and careful attention to detail, so any interface that introduced unnecessary visual noise would increase rather than reduce cognitive effort.
+
+These conversations significantly influenced the next iteration of Merlin, leading us to simplify layouts, clarify hierarchy, and rethink how AI assistance should be introduced throughout the workflow.
+
+
+
+Introducing Merlin
+
+Aligned Intelligence,Trusted Dissemination.  (this is a Tagline put it below the “Introducing Melin” text)
+
+Merlin is a digital platform that helps intelligence reporters manage the controlled review and dissemination of tiered reports. It surfaces analytical drift, contextual insights, and customer impact across multiple tiers. It supports streamlined tier comparison through a highlighting and querying interaction, alongside full report dependency mapping and AI task suggestions. 
+
+
+
+
+
+Design System:Since analysts spend long periods reading, reviewing, and comparing intelligence reports, the interface needed to remain visually calm while supporting large amounts of complex information.
+
+We developed a lightweight design system that emphasized readability, hierarchy, consistency, and accessibility. Every component—from typography and spacing to status indicators and color usage—was intentionally designed to reduce cognitive effort and help analysts focus on decision-making rather than interface navigation.
+
+
+
+
+
+
+
+Designing the Final Workflow:
+
+Throughout the design process, two interaction models consistently emerged during concept exploration. One emphasized a familiar document-based reporting workspace, while the other introduced a node-based visualization that exposed relationships between reports, decisions, and workflow dependencies.
+
+Rather than choosing one over the other, we combined the strengths of both approaches.
+
+The final interface allows analysts to comfortably work within a traditional report editor while seamlessly switching to a node-based view whenever they need additional context, traceability, or visibility into report relationships.
+
+
+
+
+
+Final Scenario Video:
+
+
+
+(Display the below text, before putting the final video)
+
+In this scenario, Aisha, a senior report releaser, uses an AI-augmented workspace to manage and disseminate intelligence ahead of the peace talks between Behrainabad and Zendia. The system surfaces relevant reports, flags policy and alignment issues, and supports her in comparing tiered narratives. With AI assistance, she resolves framing conflicts and ensures intelligence is accurate, compliant, and delivered to the right customers.
+
+(Put the file named “Final_Scenario_Video.mp4” here)
+
+
+
+Features:
+
+
+
+Feature 1:Node-Based Traceability. (Put in the file named “node.gif” here)
+
+Aisha can view a full node map of each report, showing its history of revisions and external decisions across tiers. The nodes also connect related reports and preserve AI-human interactions, giving Aisha full transparency into how decisions and edits were made.
+
+
+
+
+
+Feature 2:Customer Group Management (Put in the file named “customer.gif” here)
+
+Aisha can review, approve, or edit based on customer distribution groups directly within the report view. She can approve expansion requests instantly or route them to a senior authority, ensuring flexible yet policy-compliant dissemination control.
+
+
+
+
+
+Feature 3:Cross-Tier Highlight Synchronization (Put in the file named “highlight.gif” here)
+
+When Aisha highlights content in one tier, the system automatically reflects corresponding changes across all opened tiers. She can also query the AI to compare relevant sections, and add annotations that route back to other analysts.
+
+
+
+
+
+Feature 4:Multi-tier Viewing (Put in the file named “multi.gif” here)While reviewing a report, Aisha is able to pull up to five tiers beside each other to run comparisons with the AI.
+
+
+
+
+
+Feature 5:Release Checklist (Put in the file named “checklist.gif” here)Before releasing a report, Aisha gets a consolidated checklist of all completed requirements. It highlights key confirmations like classification, source protection, and tier approvals in one place for quick validation. This checklist is also accessible anytime through the expanded report view to support ongoing release readiness.
+
+
+
+
+
+
+
+Impact: (Put the below points in rounded rectangle cards)
+
+Improved Transparency
+
+Visualizes report evolution, AI recommendations, and workflow dependencies.
+
+
+
+Reduced Cognitive Load
+
+Minimizes repetitive comparisons and manual tracking across report tiers.
+
+
+
+= Greater Analyst Confidence
+
+Supports informed, policy-aware decisions while maintaining human oversight.
+
+
+
+
+
+(Put the below line at the end of the page in the center, in small font)
+
+A project completed in collaboration with the Laboratory of Analytical Sciences (LAS) as part of the MGXD Design Studio.
+
+
+
+
+
+
+
+
+
