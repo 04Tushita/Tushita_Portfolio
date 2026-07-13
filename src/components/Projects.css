@@ -146,3 +146,44 @@
     gap: 2rem;
   }
 }
+
+/* Glowing Display Screen Bezel & Lens style for Homepage card videos */
+.project-video-bezel {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: #111111;
+  border-radius: 16px;
+  /* Outer glow border */
+  border: 2px solid #00FFD4;
+  box-shadow: 
+    0 0 18px rgba(0, 255, 212, 0.5),
+    inset 0 0 10px rgba(0, 255, 212, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.project-video-lens {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Inner glow border */
+  border: 1.5px solid #00FFD4;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 212, 0.3),
+    inset 0 0 12px rgba(0, 255, 212, 0.4);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.project-video-lens .project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

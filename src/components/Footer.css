@@ -33,3 +33,25 @@
   font-family: var(--font-body);
   font-weight: 600;
 }
+
+/* Footer Dark Theme for Project 2 */
+.footer.footer-dark-theme {
+  background-color: #050d0a !important; /* Matches Project 2 background */
+  border-top: 1px solid rgba(0, 255, 212, 0.15) !important;
+  color: #e2ede8;
+}
+
+.footer.footer-dark-theme .footer-logo {
+  color: #00FFD4 !important; /* Luminous cyan */
+  text-shadow: 0 0 10px rgba(0, 255, 212, 0.2);
+}
+
+.footer.footer-dark-theme .footer-tagline {
+  color: #d946ef !important; /* Magical Magenta */
+  text-shadow: 0 0 10px rgba(217, 70, 239, 0.2);
+}
+
+.footer.footer-dark-theme .footer-bottom {
+  border-top: 1px solid rgba(0, 255, 212, 0.15) !important;
+  color: rgba(226, 237, 232, 0.5) !important;
+}

@@ -49,6 +49,7 @@ import leg1Gif from '../Project2/Butterfly project/Gifs/leg1.gif';
 import leg2Gif from '../Project2/Butterfly project/Gifs/leg2.gif';
 import altGif from '../Project2/Butterfly project/Gifs/alt.gif';
 import newGif from '../Project2/Butterfly project/Gifs/new.gif';
+import touchGif from '../Project2/Butterfly project/Gifs/touch.gif';
 
 import mo1 from '../Project2/Butterfly project/3d model/mo1.png';
 import mo2 from '../Project2/Butterfly project/3d model/mo2.png';
@@ -58,6 +59,7 @@ import mo5 from '../Project2/Butterfly project/3d model/mo5.png';
 
 import vid3d from '../Project2/Butterfly project/Videos/3dvid.mov';
 import prototypeVid from '../Project2/Butterfly project/Videos/prototype.mov';
+import pro2Video from '../Project2/Butterfly project/Videos/pro2.1.mp4';
 
 const ButterflyDetail = () => {
   // Navigation scrolls to top on mount
@@ -94,23 +96,46 @@ const ButterflyDetail = () => {
   }, []);
 
   // 3. UI Steps Widget State
-  const [uiState, setUiState] = useState('slideshow'); // 'slideshow', 'horizontal', 'lightbox'
-  const [uiSlideIndex, setUiSlideIndex] = useState(0);
-  const [lightboxImage, setLightboxImage] = useState(null);
+  const [uiState, setUiState] = useState('stack'); // 'stack', 'horizontal'
+  const [activeLightboxImage, setActiveLightboxImage] = useState(null);
+  const [stackOrder, setStackOrder] = useState([0, 1, 2]);
+  const sectionRef = useRef(null);
+
   const uiScreens = [
-    { img: step1, title: "Step 1: Focus on Specimen" },
-    { img: step2, title: "Step 2: Layered Information" },
-    { img: step3, title: "Step 3: Interactive Deep Dive" }
+    { img: step1, caption: "Home Page" },
+    { img: step2, caption: "Stories of Fragility" },
+    { img: step3, caption: "Magic Sliders" }
   ];
 
-  // Auto slideshow for UI screens (only when in slideshow mode)
+  // Auto shuffling for 3D card stack (only when in stack mode)
   useEffect(() => {
-    if (uiState !== 'slideshow') return;
+    if (uiState !== 'stack') return;
     const timer = setInterval(() => {
-      setUiSlideIndex((prev) => (prev + 1) % uiScreens.length);
-    }, 3500);
+      setStackOrder((prev) => [prev[1], prev[2], prev[0]]);
+    }, 3000);
     return () => clearInterval(timer);
   }, [uiState]);
+
+  // Reset to stack mode when section scrolls out of view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setUiState('stack');
+          setActiveLightboxImage(null);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="butterfly-detail-page">
@@ -191,7 +216,7 @@ const ButterflyDetail = () => {
       <div className="container butterfly-case-container">
         
         {/* SECTION 1: Overview */}
-        <section className="case-section butterfly-card-dark">
+        <section className="case-section">
           <h2 className="case-title-serif text-glow-gold">Overview</h2>
           <div className="case-body-text mt-4">
             <p>
@@ -238,14 +263,13 @@ const ButterflyDetail = () => {
           </div>
         </section>
 
-        {/* SECTION 3: Question Pondered Callout */}
+        {/* SECTION 3: Question Pondered */}
         <section className="case-section mt-16 text-center">
-          <div className="question-callout-card">
-            <span className="quote-mark">“</span>
-            <h3 className="question-text">
+          <h2 className="case-title-serif text-glow-gold">Question Pondered!</h2>
+          <div className="case-body-text mt-4">
+            <p className="question-text-normal">
               How might we transform preserved butterfly specimens into an interactive experience that inspires curiosity while encouraging visitors to understand the importance of butterfly conservation?
-            </h3>
-            <span className="quote-mark text-right">”</span>
+            </p>
           </div>
         </section>
 
@@ -404,7 +428,7 @@ const ButterflyDetail = () => {
         </section>
 
         {/* SECTION 7: Designing the Interface with Interactive Slideshow/Grid Widget */}
-        <section className="case-section mt-16">
+        <section className="case-section mt-16" ref={sectionRef}>
           <h2 className="case-title-serif">Designing the Interface</h2>
           
           <div className="case-body-text mt-4 mb-8">
@@ -421,45 +445,56 @@ const ButterflyDetail = () => {
 
           {/* Interactive UI Screen Widget */}
           <div className="ui-widget-interactive-box">
-            {uiState === 'slideshow' && (
-              <div className="ui-slideshow-view" onClick={() => setUiState('horizontal')}>
-                <div className="slideshow-hover-banner">
-                  <span>Click to Expand & Compare Screens</span>
+            {uiState === 'stack' && (
+              <div className="ui-card-stack-view" onClick={() => setUiState('horizontal')}>
+                <div className="stack-hover-instructions">
+                  <span>Click to expand</span>
                   <Maximize2 size={16} />
                 </div>
-                
-                <div className="ui-slideshow-content">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={uiSlideIndex}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -50 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                      className="ui-slide-wrapper"
-                    >
-                      <img 
-                        src={uiScreens[uiSlideIndex].img} 
-                        alt={uiScreens[uiSlideIndex].title} 
-                        className="ui-slide-img" 
-                      />
-                      <span className="ui-slide-label">{uiScreens[uiSlideIndex].title}</span>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-                
-                <div className="slideshow-pagination">
-                  {uiScreens.map((_, i) => (
-                    <span 
-                      key={i} 
-                      className={`pagination-bar ${uiSlideIndex === i ? 'active' : ''}`}
-                    ></span>
-                  ))}
+                <div className="ui-cards-deck">
+                  {uiScreens.map((screen, idx) => {
+                    const pos = stackOrder.indexOf(idx);
+                    return (
+                      <div
+                        key={idx}
+                        className={`ui-stacked-card pos-${pos}`}
+                      >
+                        <div className="card-glass-glow-border">
+                          <img src={screen.img} alt={screen.caption} className="stacked-card-img" />
+                          <div className="stacked-card-overlay">
+                            <span className="stacked-card-title">{screen.caption}</span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
 
-            {/* Horizontal Compare Overlays handled below in modals section */}
+            {uiState === 'horizontal' && (
+              <div className="ui-horizontal-grid-view">
+                <div className="horizontal-grid-instructions">
+                  <span>Click any screen to view fullscreen</span>
+                </div>
+                <div className="ui-horizontal-grid">
+                  {uiScreens.map((screen, idx) => (
+                    <div 
+                      key={idx}
+                      className="horizontal-card-item"
+                      onClick={() => setActiveLightboxImage(screen.img)}
+                    >
+                      <div className="horizontal-card-inner">
+                        <img src={screen.img} alt={screen.caption} />
+                      </div>
+                      <div className="horizontal-card-caption">
+                        {screen.caption}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -506,6 +541,17 @@ const ButterflyDetail = () => {
               </div>
             </div>
           </div>
+
+          {/* Subheading: Gesture Tracking */}
+          <div className="sub-case-block mt-12">
+            <h3 className="case-sub-title text-glow-cyan">Gesture Tracking</h3>
+            <p className="case-body-text mt-2">
+              Gesture-based interaction through pointing towards a butterfly triggers projection mapping that causes the selected butterfly specimen to softly glow and gently flap its wings, symbolically bringing the preserved specimen back to life.
+            </p>
+            <div className="wall-gif-container mt-6">
+              <img src={touchGif} alt="Gesture tracking touch interaction" className="wall-gif-img" />
+            </div>
+          </div>
         </section>
 
         {/* SECTION 9: Bringing the Space to Life (3D Model Panel) */}
@@ -515,10 +561,6 @@ const ButterflyDetail = () => {
           <div className="space-3d-layout mt-8">
             {/* Loop Video */}
             <div className="video-panel glass-card-dark">
-              <div className="video-panel-header">
-                <span className="live-badge">3D WALKTHROUGH</span>
-                <span className="mute-badge"><VolumeX size={14} /> Muted</span>
-              </div>
               <video 
                 src={vid3d} 
                 className="walkthrough-video"
@@ -532,22 +574,22 @@ const ButterflyDetail = () => {
             {/* 3D Model collage of angles */}
             <div className="collage-panel">
               <div className="collage-row top-row">
-                <div className="collage-img-box angle-1">
-                  <img src={mo1} alt="3D Model Angle 1" />
+                <div className="collage-img-box angle-1" onClick={() => setActiveLightboxImage(mo1)}>
+                   <img src={mo1} alt="3D Model Angle 1" />
                 </div>
-                <div className="collage-img-box angle-2">
-                  <img src={mo2} alt="3D Model Angle 2" />
+                <div className="collage-img-box angle-2" onClick={() => setActiveLightboxImage(mo2)}>
+                   <img src={mo2} alt="3D Model Angle 2" />
                 </div>
               </div>
               <div className="collage-row bottom-row">
-                <div className="collage-img-box angle-3">
-                  <img src={mo3} alt="3D Model Angle 3" />
+                <div className="collage-img-box angle-3" onClick={() => setActiveLightboxImage(mo3)}>
+                   <img src={mo3} alt="3D Model Angle 3" />
                 </div>
-                <div className="collage-img-box angle-4">
-                  <img src={mo4} alt="3D Model Angle 4" />
+                <div className="collage-img-box angle-4" onClick={() => setActiveLightboxImage(mo4)}>
+                   <img src={mo4} alt="3D Model Angle 4" />
                 </div>
-                <div className="collage-img-box angle-5">
-                  <img src={mo5} alt="3D Model Angle 5" />
+                <div className="collage-img-box angle-5" onClick={() => setActiveLightboxImage(mo5)}>
+                   <img src={mo5} alt="3D Model Angle 5" />
                 </div>
               </div>
             </div>
@@ -562,12 +604,12 @@ const ButterflyDetail = () => {
           <h2 className="case-title-serif">Prototype of Screens</h2>
           
           {/* Wall display kiosk frames */}
-          <div className="museum-display-kiosk mt-8">
+          <div className="museum-display-kiosk portrait mt-8">
             <div className="kiosk-bezel">
               <div className="kiosk-reflection"></div>
               <div className="kiosk-lens">
                 <video 
-                  src={prototypeVid} 
+                  src={pro2Video} 
                   className="kiosk-screen-video" 
                   autoPlay 
                   loop 
@@ -579,6 +621,9 @@ const ButterflyDetail = () => {
             </div>
             <div className="kiosk-wall-mount-shadow"></div>
           </div>
+          <p className="gallery-caption mt-6">
+            As the butterfly responds to the visitor's pointing gesture, the adjacent interactive display activates, presenting species-specific information and conservation stories through an immersive digital interface.
+          </p>
         </section>
 
         {/* SECTION 11: Exploring an Alternative Narrative Experience */}
@@ -624,77 +669,17 @@ const ButterflyDetail = () => {
 
       </div>
 
-      {/* OVERLAY MODAL: UI Steps Compare Screen */}
-      <AnimatePresence>
-        {uiState === 'horizontal' && (
-          <motion.div 
-            className="ui-modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setUiState('slideshow')}
-          >
-            <motion.div 
-              className="ui-modal-content glass-card-dark"
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="ui-modal-header">
-                <h3>Design Iteration Steps</h3>
-                <button className="ui-close-btn" onClick={() => setUiState('slideshow')}>×</button>
-              </div>
-
-              <div className="ui-horizontal-flow">
-                <div 
-                  className="flow-step-card" 
-                  onClick={() => { setLightboxImage(step1); setUiState('lightbox'); }}
-                >
-                  <img src={step1} alt="Step 1: Scientific specimen focus" />
-                  <span className="step-card-tag">Step 1</span>
-                </div>
-                
-                <div className="flow-arrow"><ArrowRight size={24} /></div>
-
-                <div 
-                  className="flow-step-card" 
-                  onClick={() => { setLightboxImage(step2); setUiState('lightbox'); }}
-                >
-                  <img src={step2} alt="Step 2: Layered engagement" />
-                  <span className="step-card-tag">Step 2</span>
-                </div>
-
-                <div className="flow-arrow"><ArrowRight size={24} /></div>
-
-                <div 
-                  className="flow-step-card" 
-                  onClick={() => { setLightboxImage(step3); setUiState('lightbox'); }}
-                >
-                  <img src={step3} alt="Step 3: Exploration detail" />
-                  <span className="step-card-tag">Step 3</span>
-                </div>
-              </div>
-
-              <p className="modal-instruction-text mt-4">
-                Click on any screen to expand to full-screen view.
-              </p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* LIGHTBOX OVERLAY: Full Screen Expand */}
       <AnimatePresence>
-        {uiState === 'lightbox' && (
+        {activeLightboxImage !== null && (
           <motion.div 
             className="ui-lightbox-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setUiState('horizontal')}
+            onClick={() => setActiveLightboxImage(null)}
           >
-            <button className="lightbox-close-btn" onClick={() => setUiState('horizontal')}>×</button>
+            <button className="lightbox-close-btn" onClick={() => setActiveLightboxImage(null)}>×</button>
             <motion.div 
               className="ui-lightbox-content"
               initial={{ scale: 0.9 }}
@@ -702,7 +687,7 @@ const ButterflyDetail = () => {
               exit={{ scale: 0.9 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={lightboxImage} alt="Expanded interface design detail" className="lightbox-img-full" />
+              <img src={activeLightboxImage} alt="Expanded interface design detail" className="lightbox-img-full" />
             </motion.div>
           </motion.div>
         )}

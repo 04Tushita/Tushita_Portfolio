@@ -2,7 +2,7 @@
 
 .butterfly-detail-page {
   position: relative;
-  background-color: #07120e; /* Deep rich forest obsidian */
+  background-color: #050d0a; /* Deep forest void */
   color: #e2ede8; /* Soft green-tinted off-white text */
   font-family: var(--font-body);
   padding-top: 120px;
@@ -10,35 +10,71 @@
   overflow-x: hidden;
 }
 
-/* Background Glowing Speculative Blobs */
+/* Background Glowing Speculative Blobs - Magical drifting auroras */
+@keyframes driftGlow {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(60px, -80px) scale(1.15); }
+  66% { transform: translate(-45px, 40px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.32; }
+}
+
 .glow-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.15;
-  z-index: 0;
+  filter: blur(140px);
   pointer-events: none;
+  z-index: 0;
+  animation: driftGlow 18s infinite ease-in-out, pulseOpacity 10s infinite ease-in-out;
 }
+
 .blob-1 {
   width: 500px;
   height: 500px;
-  background-color: #0acf83; /* Glowing green */
-  top: 15%;
-  left: -10%;
+  background-color: #d946ef; /* Magical Orchid / Purple */
+  top: 8%;
+  left: -15%;
+  animation-duration: 20s, 11s;
 }
+
 .blob-2 {
   width: 600px;
   height: 600px;
-  background-color: #e3a06e; /* Glowing amber/gold */
-  top: 45%;
-  right: -10%;
+  background-color: #00FFD4; /* Speculative Cyan */
+  top: 30%;
+  right: -15%;
+  animation-duration: 24s, 13s;
 }
+
 .blob-3 {
+  width: 450px;
+  height: 450px;
+  background-color: #10b981; /* Luminous Emerald */
+  bottom: 35%;
+  left: -5%;
+  animation-duration: 22s, 10s;
+}
+
+.blob-4 {
+  width: 550px;
+  height: 550px;
+  background-color: #a855f7; /* Violet Glow */
+  bottom: 8%;
+  right: 10%;
+  animation-duration: 28s, 15s;
+}
+
+.blob-5 {
   width: 400px;
   height: 400px;
-  background-color: #1abcfe; /* Glowing blue */
-  bottom: 10%;
-  left: 20%;
+  background-color: #f59e0b; /* Luminous Gold */
+  top: 60%;
+  left: 25%;
+  animation-duration: 18s, 9s;
 }
 
 .butterfly-case-container {
@@ -70,7 +106,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(7, 18, 14, 0.98) 0%, rgba(7, 18, 14, 0.88) 50%, rgba(7, 18, 14, 0.6) 100%);
+  background: 
+    linear-gradient(to bottom, rgba(5, 13, 10, 0.3) 0%, rgba(5, 13, 10, 0.7) 60%, #050d0a 100%),
+    linear-gradient(135deg, rgba(5, 13, 10, 0.9) 0%, rgba(5, 13, 10, 0.5) 100%);
   z-index: 1;
 }
 
@@ -103,7 +141,7 @@
 
 .butterfly-hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
@@ -125,9 +163,12 @@
   font-size: 3.6rem;
   font-weight: 800;
   line-height: 1.15;
-  color: #ffffff;
+  background: linear-gradient(135deg, #00FFD4 0%, #d946ef 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.2rem;
-  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 
 .butterfly-subtitle-italic {
@@ -150,29 +191,45 @@
   display: inline-block;
   padding: 0.6rem 1.4rem;
   border-radius: 2rem;
-  background: rgba(227, 160, 110, 0.1);
-  border: 1px solid rgba(227, 160, 110, 0.3);
-  color: #e3a06e;
+  background: rgba(0, 255, 212, 0.08);
+  border: 1.2px solid rgba(0, 255, 212, 0.3);
+  color: #00FFD4;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 212, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.butterfly-pill:hover {
+  background: rgba(217, 70, 239, 0.12);
+  border-color: rgba(217, 70, 239, 0.5);
+  color: #d946ef;
+  box-shadow: 0 0 12px rgba(217, 70, 239, 0.3);
+  transform: translateY(-1.5px);
 }
 
 /* Sidebar metadata panel */
 .butterfly-meta-panel {
-  background: rgba(12, 30, 23, 0.45);
-  border: 1px solid rgba(227, 160, 110, 0.15);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(12, 22, 18, 0.65);
+  border: 1.5px solid rgba(0, 255, 212, 0.15);
+  box-shadow: 
+    0 12px 45px rgba(0, 0, 0, 0.6),
+    inset 0 0 15px rgba(0, 255, 212, 0.05);
   border-radius: 20px;
   padding: 2.5rem;
   backdrop-filter: blur(16px);
+  transition: border-color 0.4s ease;
+}
+
+.butterfly-meta-panel:hover {
+  border-color: rgba(217, 70, 239, 0.35);
 }
 
 .meta-panel-title {
   font-size: 1.3rem;
   color: #ffffff;
-  border-bottom: 1px solid rgba(227, 160, 110, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 212, 0.2);
   padding-bottom: 0.8rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -994,9 +1051,16 @@
   border: 1px dashed rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 12px;
-  min-height: 100px;
+  height: 120px;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .motion-text-box {
+    height: auto;
+    min-height: 100px;
+  }
 }
 
 .motion-text-box p {
@@ -1112,9 +1176,11 @@
 }
 
 .collage-img-box:hover {
-  transform: scale(1.05);
-  border-color: #e3a06e;
-  box-shadow: 0 6px 20px rgba(227, 160, 110, 0.2);
+  transform: scale(1.08);
+  border-color: #00FFD4;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(0, 255, 212, 0.4);
   z-index: 2;
 }
 
@@ -1126,18 +1192,44 @@
   margin: 3rem auto;
 }
 
+/* Portrait display bezel settings */
+.museum-display-kiosk.portrait {
+  max-width: 380px;
+  margin: 3.5rem auto;
+}
+
+.museum-display-kiosk.portrait .kiosk-bezel {
+  aspect-ratio: auto;
+  height: auto;
+  padding: 2.2rem 1.8rem 3.5rem 1.8rem;
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.museum-display-kiosk.portrait .kiosk-lens {
+  aspect-ratio: 1164 / 1400;
+  height: auto;
+}
+
+.museum-display-kiosk.portrait .kiosk-screen-video {
+  object-fit: fill;
+}
+
 .kiosk-bezel {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  background: #111111;
+  background: #121212;
   border-radius: 30px;
   padding: 2rem 2.5rem 3rem 2.5rem; /* bottom is wider for museum label/indicator look */
+  /* Outer glow border in #00FFD4 */
+  border: 3px solid #00FFD4;
   box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(0, 255, 212, 0.6),
+    0 15px 35px rgba(0, 0, 0, 0.75),
     inset 0 2px 8px rgba(255, 255, 255, 0.1),
     inset 0 -2px 8px rgba(0,0,0,0.8);
-  border: 3px solid #222222;
   overflow: hidden;
   z-index: 3;
 }
@@ -1159,8 +1251,12 @@
   background: #000;
   border-radius: 8px;
   overflow: hidden;
-  border: 2px solid #000000;
-  box-shadow: inset 0 4px 10px rgba(0,0,0,0.8);
+  /* Inner glow border in #00FFD4 */
+  border: 2px solid #00FFD4;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 212, 0.35),
+    inset 0 4px 10px rgba(0,0,0,0.8),
+    inset 0 0 18px rgba(0, 255, 212, 0.25);
 }
 
 .kiosk-screen-video {
@@ -1177,8 +1273,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #0acf83;
-  box-shadow: 0 0 8px #0acf83;
+  background-color: #00FFD4;
+  box-shadow: 0 0 8px #00FFD4;
   animation: kioskPulse 2.5s infinite;
 }
 
@@ -1194,7 +1290,7 @@
   left: 15px;
   right: 15px;
   bottom: -15px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 255, 212, 0.12); /* Subtle cyan glow reflected on wall */
   filter: blur(25px);
   z-index: 1;
   border-radius: 30px;
@@ -1241,4 +1337,502 @@
   font-size: 0.95rem;
   color: rgba(226, 237, 232, 0.5);
   line-height: 1.6;
+}
+
+/* ==========================================
+   PROJECT 2 REVAMP CUSTOM STYLES (Neon Theme)
+   ========================================== */
+
+/* Spacing System Adjustments */
+.butterfly-detail-page .case-section {
+  margin-top: 6rem !important;
+  margin-bottom: 6rem !important;
+}
+
+.butterfly-detail-page .case-title-serif {
+  margin-top: 0 !important;
+  margin-bottom: 1.6rem !important;
+  border-bottom: 2px solid rgba(0, 255, 212, 0.15);
+  padding-bottom: 0.6rem;
+  display: inline-block;
+}
+
+.butterfly-detail-page .case-body-text {
+  margin-top: 0 !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.butterfly-detail-page .case-body-text p {
+  margin-bottom: 0;
+}
+
+.butterfly-detail-page .case-body-text p + p {
+  margin-top: 1.2rem !important;
+}
+
+/* Consistent spacing around media elements */
+.butterfly-detail-page .space-gallery-wrapper,
+.butterfly-detail-page .carousel-container,
+.butterfly-detail-page .storyboard-container,
+.butterfly-detail-page .ui-widget-interactive-box,
+.butterfly-detail-page .wall-gif-container,
+.butterfly-detail-page .motion-tracking-layout,
+.butterfly-detail-page .space-3d-layout,
+.butterfly-detail-page .experience-display-kiosk,
+.butterfly-detail-page .museum-display-kiosk,
+.butterfly-detail-page .alternative-gif-wrapper,
+.butterfly-detail-page .why-refined-block {
+  margin-top: 2.6rem !important;
+  margin-bottom: 2.6rem !important;
+}
+
+/* Magical Text Glow Classes */
+.text-glow-cyan {
+  color: #00FFD4 !important;
+  text-shadow: 0 0 15px rgba(0, 255, 212, 0.4);
+}
+
+.text-glow-magenta {
+  color: #d946ef !important;
+  text-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+}
+
+.text-glow-purple {
+  color: #a855f7 !important;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Bezel Display Screen for the Showcase Video */
+.experience-display-kiosk {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  margin: 3.5rem auto;
+}
+
+.experience-bezel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #121212;
+  border-radius: 28px;
+  padding: 2.2rem 2.2rem 3rem 2.2rem;
+  /* Outer glow border in #00FFD4 */
+  border: 3px solid #00FFD4;
+  box-shadow: 
+    0 0 25px rgba(0, 255, 212, 0.6),
+    0 15px 45px rgba(0, 0, 0, 0.85),
+    inset 0 2px 8px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 8px rgba(0,0,0,0.8);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.experience-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.experience-lens {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  /* Inner glow border in #00FFD4 */
+  border: 2px solid #00FFD4;
+  box-shadow: 
+    0 0 18px rgba(0, 255, 212, 0.35),
+    inset 0 5px 15px rgba(0, 0, 0, 0.9),
+    inset 0 0 20px rgba(0, 255, 212, 0.25);
+}
+
+.experience-screen-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.experience-led-indicator {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #00FFD4;
+  box-shadow: 0 0 10px #00FFD4;
+  animation: kioskPulse 2.5s infinite;
+}
+
+.experience-wall-mount-shadow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: -15px;
+  background: rgba(0, 255, 212, 0.12); /* Subtle cyan aura reflection on wall */
+  filter: blur(35px);
+  z-index: 1;
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+/* 3D Stack Shuffling Card Deck */
+.ui-widget-interactive-box {
+  width: 85vw;
+  max-width: 1400px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .ui-widget-interactive-box {
+    width: 100%;
+    left: 0;
+    transform: none;
+    margin: 2rem 0;
+  }
+}
+
+.ui-card-stack-view {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin: 3.5rem auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+}
+
+.stack-hover-instructions {
+  position: absolute;
+  top: -30px;
+  background: rgba(0, 255, 212, 0.08);
+  border: 1px solid rgba(0, 255, 212, 0.3);
+  color: #00FFD4;
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 12;
+  box-shadow: 0 4px 15px rgba(0, 255, 212, 0.15);
+  transition: all 0.3s ease;
+}
+
+.ui-card-stack-view:hover .stack-hover-instructions {
+  background: rgba(217, 70, 239, 0.1);
+  border-color: rgba(217, 70, 239, 0.4);
+  color: #d946ef;
+  box-shadow: 0 4px 15px rgba(217, 70, 239, 0.2);
+}
+
+.ui-cards-deck {
+  position: relative;
+  width: 420px;
+  height: 315px;
+  transform-style: preserve-3d;
+}
+
+.ui-stacked-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Positions mapping (top, middle, bottom) with distinct sizes and wide offsets so all are fully visible */
+.ui-stacked-card.pos-0 {
+  transform: translate3d(-140px, 15px, 40px) rotateY(-15deg) scale(0.92);
+  z-index: 10;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ui-stacked-card.pos-1 {
+  transform: translate3d(20px, 0, 0) rotateY(-15deg) scale(1.0);
+  z-index: 9;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.ui-stacked-card.pos-2 {
+  transform: translate3d(180px, -15px, -40px) rotateY(-15deg) scale(1.08);
+  z-index: 8;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Hover Deck Spread Animations with wider offsets to prevent overlapping */
+.ui-card-stack-view:hover .pos-0 {
+  transform: translate3d(-200px, 20px, 60px) rotateY(-8deg) scale(0.92);
+}
+
+.ui-card-stack-view:hover .pos-1 {
+  transform: translate3d(20px, 0, 20px) rotateY(-8deg) scale(1.0);
+  opacity: 0.98;
+}
+
+.ui-card-stack-view:hover .pos-2 {
+  transform: translate3d(240px, -20px, -20px) rotateY(-8deg) scale(1.08);
+  opacity: 0.95;
+}
+
+.card-glass-glow-border {
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 22, 18, 0.9);
+  border: 2px solid #00FFD4;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(0, 255, 212, 0.15);
+  position: relative;
+  transition: border-color 0.4s;
+}
+
+.ui-card-stack-view:hover .card-glass-glow-border {
+  border-color: #d946ef;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(217, 70, 239, 0.2);
+}
+
+.stacked-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.stacked-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(to top, rgba(5, 13, 10, 0.95), rgba(5, 13, 10, 0));
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stacked-card-title {
+  font-size: 1rem;
+  color: #00FFD4;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.ui-card-stack-view:hover .stacked-card-title {
+  color: #d946ef;
+}
+
+/* Inline Horizontal Grid View */
+.ui-horizontal-grid-view {
+  width: 100%;
+  margin: 3.5rem auto;
+}
+
+.horizontal-grid-instructions {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.horizontal-grid-instructions span {
+  background: rgba(217, 70, 239, 0.08);
+  border: 1px solid rgba(217, 70, 239, 0.3);
+  color: #d946ef;
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(217, 70, 239, 0.15);
+}
+
+.ui-horizontal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .ui-horizontal-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 450px;
+  }
+}
+
+.horizontal-card-item {
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.horizontal-card-item:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.horizontal-card-inner {
+  background: rgba(12, 22, 18, 0.65);
+  border: 2px solid rgba(0, 255, 212, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+  position: relative;
+  aspect-ratio: 16/10;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.horizontal-card-item:hover .horizontal-card-inner {
+  border-color: #00FFD4;
+  box-shadow: 
+    0 15px 40px rgba(0, 255, 212, 0.25),
+    0 0 15px rgba(0, 255, 212, 0.15);
+}
+
+.horizontal-card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.horizontal-card-caption {
+  margin-top: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #e2ede8;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  transition: color 0.3s;
+}
+
+.horizontal-card-item:hover .horizontal-card-caption {
+  color: #00FFD4;
+}
+
+/* Question Text Normal Layout */
+.question-text-normal {
+  font-size: 1.35rem;
+  line-height: 1.75;
+  color: #00FFD4 !important;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(0, 255, 212, 0.25);
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Fullscreen Lightbox Overlay */
+.ui-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 10, 8, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-close-btn:hover {
+  color: #00FFD4;
+  transform: scale(1.15) rotate(90deg);
+}
+
+.ui-lightbox-content {
+  max-width: 90%;
+  max-height: 85%;
+  border: 3px solid #00FFD4;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 50px rgba(0, 255, 212, 0.5),
+    0 15px 45px rgba(0, 0, 0, 0.8);
+  position: relative;
+  cursor: default;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img-full {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  object-fit: contain;
+}
+
+/* Overriding general container card elements to follow the neon forest theme */
+.butterfly-detail-page .butterfly-card-dark {
+  background: rgba(12, 22, 18, 0.65);
+  border: 1.5px solid rgba(0, 255, 212, 0.15);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(217, 70, 239, 0.05);
+}
+
+.butterfly-detail-page .glass-card-dark {
+  background: rgba(12, 22, 18, 0.65);
+  border: 1.5px solid rgba(0, 255, 212, 0.15);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(0, 255, 212, 0.05);
+}
+
+.butterfly-detail-page .why-refined-block {
+  border-color: rgba(217, 70, 239, 0.25);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 25px rgba(217, 70, 239, 0.05);
 }

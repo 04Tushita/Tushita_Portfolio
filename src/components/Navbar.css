@@ -60,34 +60,35 @@
   top: 50%;
   transform: translateY(-50%);
   /* Visually shift badge UP */
-  margin-top: -13px;
+  margin-top: -20px;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
 }
 
-.logo-badge-circle {
-  position: absolute;
-  top: 0;
-  left: 0;
+.logo-initials-badge-svg {
   width: 100%;
   height: 100%;
-  background-color: var(--accent-primary);
-  border-radius: 50%;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo-cursive-tk {
-  position: relative;
-  z-index: 2;
-  font-family: 'Mr De Haviland', cursive;
-  font-size: 3.4rem;
-  color: var(--bg-main);
-  line-height: 1;
-  /* Shift to visually center and add a tiny stroke to make the thin cursive pop */
-  transform: translate(2px, -2px);
-  -webkit-text-stroke: 0.4px var(--bg-main);
+.logo-badge-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.logo-svg-circle {
+  fill: var(--accent-primary);
+  transition: fill 0.3s ease;
+}
+
+.logo-svg-text {
+  fill: var(--bg-main);
+  transition: fill 0.3s ease;
 }
 
 /* The signature full name view */
@@ -196,4 +197,56 @@
   .mobile-nav {
     display: flex;
   }
+}
+
+/* Navbar Dark Theme overrides for Project 2 */
+.navbar.navbar-dark-theme .nav-link {
+  color: rgba(226, 237, 232, 0.8) !important;
+}
+
+.navbar.navbar-dark-theme .nav-link:hover {
+  color: #00FFD4 !important;
+}
+
+.navbar.navbar-dark-theme .nav-link::after {
+  background: linear-gradient(135deg, #00FFD4 0%, #d946ef 100%) !important;
+}
+
+.navbar.navbar-dark-theme .logo-svg-circle {
+  fill: #d946ef !important;
+}
+
+.navbar.navbar-dark-theme .logo-svg-text {
+  fill: #FAF9F6 !important;
+}
+
+.navbar.navbar-dark-theme .logo-full-view {
+  color: #00FFD4 !important;
+  -webkit-text-stroke: 0.5px #00FFD4 !important;
+}
+
+.navbar.navbar-dark-theme .mobile-toggle {
+  color: rgba(226, 237, 232, 0.8) !important;
+}
+
+/* Scrolled state for Dark Theme */
+.navbar.navbar-dark-theme.scrolled {
+  background-color: rgba(5, 13, 10, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 255, 212, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Mobile Menu for Dark Theme */
+.navbar.navbar-dark-theme .mobile-nav {
+  background-color: rgba(5, 13, 10, 0.96) !important;
+  border: 1px solid rgba(0, 255, 212, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+.navbar.navbar-dark-theme .mobile-nav-link {
+  color: rgba(226, 237, 232, 0.8) !important;
+}
+
+.navbar.navbar-dark-theme .mobile-nav-link:hover {
+  color: #00FFD4 !important;
 }
