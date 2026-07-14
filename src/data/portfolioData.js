@@ -1,5 +1,6 @@
 import IntroVideo from '../assets/projects/merlin/Videos/Intro_video.mov';
 import pro2Video from '../Project2/Butterfly project/Videos/pro2.mp4';
+import thumbVideo from '../Library project/video/thumb.mp4';
 
 export const projects = [
   {
@@ -40,19 +41,21 @@ export const projects = [
     ]
   },
   {
-    id: "eco-ecommerce",
-    title: "Lumina Eco-Store",
-    shortDescription: "A sustainable e-commerce platform designed to promote eco-friendly products with a minimal footprint.",
-    tags: ["E-commerce", "UX Research", "Web"],
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    role: "UX Researcher & Designer",
-    duration: "Mar 2023 - Jul 2023",
-    problem: "Consumers find it hard to verify the sustainability claims of products while shopping online.",
-    solution: "Lumina introduces an 'Eco-Score' system seamlessly integrated into the shopping experience, accompanied by a clean, earthy aesthetic.",
+    id: "library-project",
+    title: "NC State Design Library Research",
+    subtitle: "Understanding Student Collaboration: An analysis of Seating, Space and Study Behavior",
+    shortDescription: "An analysis of how flexible and varied seating arrangements can foster connection and group work in the design library.",
+    tags: ["Academic Project", "UX Research", "Spatial Behavior Analysis"],
+    image: thumbVideo,
+    role: "UX Research",
+    duration: "August 2025 – November 2025",
+    problem: "The current seating arrangements in the Design Library do not effectively support undergraduate students who wish to engage in flexible, planned group work. Students face challenges in finding appropriate collaborative spaces, which limits opportunities for connection and knowledge exchange.",
+    solution: "A comprehensive UX research study utilizing Open Coding, Affinity Clustering, Fly-on-the-wall observations, Empathy Mapping, and Journey Mapping to understand user behaviors and propose collaborative space designs.",
     features: [
-      "Transparent product lifecycle tracking.",
-      "Minimalist checkout process to reduce cognitive load.",
-      "Engaging micro-interactions for adding items to cart."
+      "Identifying students' collaborative needs.",
+      "Survey analysis through open coding and meta-themes.",
+      "User modeling via poke mapping and dynamic selves.",
+      "Design-driven recommendations for collaborative zones."
     ]
   }
 ];
@@ -100,6 +103,5 @@ export const skills = [
   { name: "Miro", logoUrl: "https://cdn.simpleicons.org/miro/050038", category: "Research" },
   { name: "Notion", logoUrl: "https://cdn.simpleicons.org/notion/000000", category: "Research" },
   { name: "HTML5", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", category: "Development" },
-  { name: "CSS3", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", category: "Development" },
-  { name: "React.js", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", category: "Development" }
+  { name: "CSS3", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", category: "Development" }
 ];

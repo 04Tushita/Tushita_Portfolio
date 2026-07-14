@@ -209,11 +209,11 @@
 }
 
 .navbar.navbar-dark-theme .nav-link::after {
-  background: linear-gradient(135deg, #00FFD4 0%, #d946ef 100%) !important;
+  background: linear-gradient(135deg, #00FFD4 0%, #10b981 100%) !important;
 }
 
 .navbar.navbar-dark-theme .logo-svg-circle {
-  fill: #d946ef !important;
+  fill: #10b981 !important; /* Muted emerald green */
 }
 
 .navbar.navbar-dark-theme .logo-svg-text {
@@ -249,4 +249,114 @@
 
 .navbar.navbar-dark-theme .mobile-nav-link:hover {
   color: #00FFD4 !important;
+}
+
+/* Navbar Library Theme overrides for Project 3 */
+.navbar.navbar-library-theme .nav-link {
+  color: rgba(253, 252, 251, 0.75) !important;
+}
+
+.navbar.navbar-library-theme .nav-link:hover {
+  color: #dbc59d !important;
+}
+
+.navbar.navbar-library-theme .nav-link::after {
+  background: #dbc59d !important;
+}
+
+.navbar.navbar-library-theme .logo-svg-circle {
+  fill: #dbc59d !important;
+}
+
+.navbar.navbar-library-theme .logo-svg-text {
+  fill: #0b0a0f !important;
+}
+
+.navbar.navbar-library-theme .logo-full-view {
+  color: #dbc59d !important;
+  -webkit-text-stroke: 0.5px #dbc59d !important;
+}
+
+.navbar.navbar-library-theme .mobile-toggle {
+  color: rgba(253, 252, 251, 0.75) !important;
+}
+
+/* Scrolled state for Library Theme */
+.navbar.navbar-library-theme.scrolled {
+  background-color: rgba(11, 10, 15, 0.85) !important;
+  border-bottom: 1px solid rgba(220, 197, 157, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Mobile Menu for Library Theme */
+.navbar.navbar-library-theme .mobile-nav {
+  background-color: rgba(11, 10, 15, 0.96) !important;
+  border: 1px solid rgba(220, 197, 157, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+.navbar.navbar-library-theme .mobile-nav-link {
+  color: rgba(253, 252, 251, 0.75) !important;
+}
+
+.navbar.navbar-library-theme .mobile-nav-link:hover {
+  color: #dbc59d !important;
+}
+
+/* Navbar Merlin Theme overrides for Project 1 */
+.navbar.navbar-merlin-theme {
+  background-color: #121f3d !important; /* Deep dark navy from the Merlin AI header */
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.navbar.navbar-merlin-theme .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar.navbar-merlin-theme .nav-link:hover {
+  color: #ff6b6b !important; /* Clean light crimson/coral on hover */
+}
+
+.navbar.navbar-merlin-theme .nav-link::after {
+  background-color: #ff6b6b !important;
+}
+
+.navbar.navbar-merlin-theme .logo-svg-circle {
+  fill: #5e6b82 !important; /* Muted slate blue-grey */
+}
+
+.navbar.navbar-merlin-theme .logo-svg-text {
+  fill: #ffffff !important;
+}
+
+.navbar.navbar-merlin-theme .logo-full-view {
+  color: #ffffff !important;
+}
+
+.navbar.navbar-merlin-theme .mobile-toggle {
+  color: #ffffff !important;
+}
+
+/* Scrolled state for Merlin Theme */
+.navbar.navbar-merlin-theme.scrolled {
+  background-color: rgba(18, 31, 61, 0.95) !important; /* Maintain slightly translucent navy on scroll */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Mobile Menu for Merlin Theme */
+.navbar.navbar-merlin-theme .mobile-nav {
+  background-color: #121f3d !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.navbar.navbar-merlin-theme .mobile-nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar.navbar-merlin-theme .mobile-nav-link:hover {
+  color: #ff6b6b !important;
 }

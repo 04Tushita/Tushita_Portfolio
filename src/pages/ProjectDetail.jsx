@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import './ProjectDetail.css';
 import MerlinDetail from './MerlinDetail';
 import ButterflyDetail from './ButterflyDetail';
+import LibraryDetail from './LibraryDetail';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -30,6 +31,10 @@ const ProjectDetail = () => {
 
   if (project.id === 'butterfly-project') {
     return <ButterflyDetail project={project} />;
+  }
+
+  if (project.id === 'library-project') {
+    return <LibraryDetail project={project} />;
   }
 
   return (

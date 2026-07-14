@@ -47,11 +47,53 @@
 }
 
 .footer.footer-dark-theme .footer-tagline {
-  color: #d946ef !important; /* Magical Magenta */
-  text-shadow: 0 0 10px rgba(217, 70, 239, 0.2);
+  color: #10b981 !important; /* Muted emerald green */
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 .footer.footer-dark-theme .footer-bottom {
   border-top: 1px solid rgba(0, 255, 212, 0.15) !important;
   color: rgba(226, 237, 232, 0.5) !important;
+}
+
+/* Footer Library Theme for Project 3 */
+.footer.footer-library-theme {
+  background-color: #0b0a0f !important; /* Matches Project 3 background */
+  border-top: 1px solid rgba(220, 197, 157, 0.15) !important;
+  color: rgba(253, 252, 251, 0.9);
+}
+
+.footer.footer-library-theme .footer-logo {
+  color: #dbc59d !important; /* Warm sand/gold */
+  text-shadow: 0 0 10px rgba(220, 197, 157, 0.2);
+}
+
+.footer.footer-library-theme .footer-tagline {
+  color: #8f7d60 !important; /* Deep warm brassy gold */
+}
+
+.footer.footer-library-theme .footer-bottom {
+  border-top: 1px solid rgba(220, 197, 157, 0.15) !important;
+  color: rgba(253, 252, 251, 0.5) !important;
+}
+
+/* Footer Merlin Theme for Project 1 */
+.footer.footer-merlin-theme {
+  background-color: #121f3d !important; /* Deep dark navy from the Merlin AI header */
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer.footer-merlin-theme .footer-logo {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.footer.footer-merlin-theme .footer-tagline {
+  color: #8fa0bd !important; /* Muted steel blue-grey */
+}
+
+.footer.footer-merlin-theme .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
 }

@@ -264,8 +264,8 @@ const ButterflyDetail = () => {
         </section>
 
         {/* SECTION 3: Question Pondered */}
-        <section className="case-section mt-16 text-center">
-          <h2 className="case-title-serif text-glow-gold">Question Pondered!</h2>
+        <section className="case-section mt-16 text-left">
+          <h2 className="case-title-serif">Question Pondered!</h2>
           <div className="case-body-text mt-4">
             <p className="question-text-normal">
               How might we transform preserved butterfly specimens into an interactive experience that inspires curiosity while encouraging visitors to understand the importance of butterfly conservation?

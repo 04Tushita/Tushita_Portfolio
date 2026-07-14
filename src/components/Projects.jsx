@@ -15,7 +15,7 @@ const Projects = () => {
       <section className="section projects-section bg-cream" id="projects">
 
         <div className="container">
-          <motion.h2 
+          <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -24,12 +24,12 @@ const Projects = () => {
             Featured <span className="italic-serif text-accent">Projects</span>
           </motion.h2>
           <p className="section-subtitle">
-            A selection of digital products, dashboards, and research-led user experience designs.
+            A selection of digital products and research-led user experience designs.
           </p>
 
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <motion.div 
+              <motion.div
                 key={project.id}
                 className="project-card organic-card"
                 initial={{ opacity: 0, y: 30 }}
@@ -39,13 +39,13 @@ const Projects = () => {
               >
                 <div className="project-img-container">
                   {project.image.endsWith('.mov') || project.image.endsWith('.mp4') ? (
-                    <video 
-                      src={project.image} 
-                      className="project-img" 
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline 
+                    <video
+                      src={project.image}
+                      className="project-img"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
                       style={{ objectFit: 'cover', width: '100%', height: '100%', display: 'block' }}
                     />
                   ) : (
@@ -57,7 +57,7 @@ const Projects = () => {
                     </Link>
                   </div>
                 </div>
-                
+
                 <div className="project-info">
                   <div className="project-tags">
                     {project.tags.map((tag, i) => (

@@ -29,6 +29,8 @@ const Navbar = () => {
   ];
 
   const isButterflyProject = location.pathname.includes('butterfly-project');
+  const isLibraryProject = location.pathname.includes('library-project');
+  const isMerlinProject = location.pathname.includes('merlin');
 
   const handleNavClick = (e, path) => {
     if (path.startsWith('#') && location.pathname === '/') {
@@ -47,7 +49,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isButterflyProject ? 'navbar-dark-theme' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isButterflyProject ? 'navbar-dark-theme' : ''} ${isLibraryProject ? 'navbar-library-theme' : ''} ${isMerlinProject ? 'navbar-merlin-theme' : ''}`}>
       <div className="container nav-container">
         <Link 
           to="/" 

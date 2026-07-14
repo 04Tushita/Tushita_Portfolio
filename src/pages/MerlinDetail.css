@@ -3,9 +3,21 @@
 .merlin-detail {
   padding-top: 100px;
   padding-bottom: 6rem;
-  background-color: var(--bg-main);
-  color: var(--text-main);
+  background-color: #f0f2f5; /* Light blue-grey background from the image */
+  color: #1e293b; /* Dark slate text */
   font-family: var(--font-body);
+
+  /* Local variables override to style the page with the Merlin AI app theme */
+  --bg-main: #f0f2f5;
+  --bg-secondary: #e2e8f0;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #5e6b82;
+  --border-dark: #121f3d;
+  --border-color: rgba(18, 31, 61, 0.15);
+  --accent-primary: #8c1d1d; /* Deep crimson from High Priority label */
+  --accent-secondary: #121f3d; /* Deep navy blue from the Merlin AI header */
+  --accent-gradient: linear-gradient(135deg, #8c1d1d 0%, #ff6b6b 100%); /* Crimson-to-coral gradient */
 }
 
 .merlin-hero-banner {
@@ -113,6 +125,29 @@
   border-radius: var(--radius-lg);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   padding: 2.2rem;
+}
+
+/* Body card design matching the Merlin AI app theme */
+.glass-card {
+  background: var(--bg-card) !important; /* Pure White background from the image */
+  border: 2px solid var(--border-dark) !important; /* Deep Navy borders from the image */
+  border-radius: var(--radius-md) !important;
+  box-shadow: 4px 4px 0px var(--border-dark) !important; /* Brutalist shadow offset */
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0px var(--border-dark) !important;
+}
+
+/* Ensure challenge block text is fully visible on light theme background */
+.challenge-block h3 {
+  color: var(--border-dark) !important; /* Deep navy */
+}
+
+.challenge-block p {
+  color: var(--text-main) !important; /* Dark slate */
 }
 
 .info-panel-title-over-bg {
@@ -788,7 +823,7 @@
 }
 
 .feature-tab-btn:hover {
-  background-color: rgba(45, 44, 42, 0.04);
+  background-color: rgba(18, 31, 61, 0.05); /* Cool navy/blue-grey tint */
 }
 
 .feature-tab-btn.active {

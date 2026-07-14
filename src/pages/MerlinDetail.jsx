@@ -8,7 +8,8 @@ import {
   Calendar, 
   Building, 
   BookOpen, 
-  Wrench 
+  Wrench,
+  HelpCircle
 } from 'lucide-react';
 import './MerlinDetail.css';
 
@@ -221,10 +222,12 @@ const MerlinDetail = ({ project }) => {
         <section className="merlin-section">
           <h2 className="section-title-bold">The Challenge</h2>
           <div className="challenge-subsections mt-6">
-            <div className="challenge-block">
-              <h3 className="section-subheading-bold">Research Question</h3>
-              <p className="highlight-quote">
-                How might the design of an interface automate the tiered reporting process, so that reporter might more efficiently and knowledgeably team with AI to sanitize and deliver sensitive information across appropriate tiers?
+            <div className="challenge-block mt-10 mb-10">
+              <h3 className="section-subheading-bold font-bold" style={{ color: 'var(--border-dark)' }}>
+                Research Question
+              </h3>
+              <p className="mt-4 font-serif italic text-lg leading-relaxed" style={{ color: 'var(--text-main)' }}>
+                “How might the design of an interface automate the tiered reporting process, so that reporter might more efficiently and knowledgeably team with AI to sanitize and deliver sensitive information across appropriate tiers?”
               </p>
             </div>
             <div className="challenge-block mt-6">
