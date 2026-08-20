@@ -91,11 +91,11 @@ export const experience = [
     company: "North Carolina State University",
     duration: "Aug' 2025 - Present",
     //description: "Developed strong foundational skills in visual design, typography, and color theory."
-  }
+  },
   {
     id: 5,
     type: 'part-time',
-    title: "Teaching Assistant - GD 400_01 (Advanced Graphic Design Studi) ",
+    title: "Teaching Assistant - GD 400_01 (Advanced Graphic Design Studio) ",
     company: "North Carolina State University",
     duration: "Aug' 2026 - Present",
     //description: "Developed strong foundational skills in visual design, typography, and color theory."
